@@ -49,6 +49,11 @@
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\LoginComandos.cs" />
     <Compile Include="Model\Controle.cs" />
+    <Compile Include="MovimentosManuaisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovimentosManuaisDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Tela_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +75,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MovimentosManuaisDataSet.xsc">
+      <DependentUpon>MovimentosManuaisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MovimentosManuaisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MovimentosManuaisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MovimentosManuaisDataSet.xss">
+      <DependentUpon>MovimentosManuaisDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

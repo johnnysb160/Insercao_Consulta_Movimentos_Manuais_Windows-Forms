@@ -11,11 +11,11 @@ namespace Movimentacao_Manual.Model
     {
         public string mensagem = "";
         LoginComandos loginDaoComandos = new LoginComandos();
-        public string Incluir(string mes, string ano, string valor, string descricao)
+        public string Incluir(string mes, string ano, string produto, string cosif, string valor, string descricao)
         {
             try
             {
-                this.mensagem = loginDaoComandos.Inclusao(mes, ano, valor, descricao);
+                this.mensagem = loginDaoComandos.Inclusao(mes, ano, produto, cosif, valor, descricao);
 
             }
             catch (Exception e)

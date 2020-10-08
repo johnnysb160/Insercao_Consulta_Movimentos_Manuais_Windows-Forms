@@ -14,9 +14,11 @@ namespace Movimentacao_Manual
 {
     public partial class Consulta_Movimentos : Form
     {
+        LoginComandos loginComandos = new LoginComandos();
         public Consulta_Movimentos()
         {
             InitializeComponent();
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -55,8 +57,7 @@ namespace Movimentacao_Manual
             {
                 if (txtMes.Text != "" && txtAno.Text != "" && txtValor.Text != "" && txtDescricao.Text != "")
                 {
-                    LoginComandos loginComandos = new LoginComandos();
-                    string mensagem2 = controle.Incluir(txtMes.Text, txtAno.Text, txtValor.Text, txtDescricao.Text);
+                    string mensagem2 = controle.Incluir(txtMes.Text, txtAno.Text, cbProduto.SelectedValue.ToString(), cbCosif.Text, txtValor.Text, txtDescricao.Text);
                     MessageBox.Show(mensagem2, "Inclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -91,6 +92,17 @@ namespace Movimentacao_Manual
             {
                 MessageBox.Show(controle.mensagem);
             }
+        }
+
+        private void Consulta_Movimentos_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.MOVIMENTO_MANUAL'. Você pode movê-la ou removê-la conforme necessário.
+            this.mOVIMENTO_MANUALTableAdapter.Fill(this.movimentosManuaisDataSet.MOVIMENTO_MANUAL);
+            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.PRODUTO_COSIF'. Você pode movê-la ou removê-la conforme necessário.
+            this.pRODUTO_COSIFTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO_COSIF);
+            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.PRODUTO'. Você pode movê-la ou removê-la conforme necessário.
+            this.pRODUTOTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO);
+
         }
     }
 }
