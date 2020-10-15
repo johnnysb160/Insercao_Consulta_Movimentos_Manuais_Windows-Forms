@@ -40,8 +40,6 @@
             this.txtAno = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.cbProduto = new System.Windows.Forms.ComboBox();
-            this.cbCosif = new System.Windows.Forms.ComboBox();
             this.gbMovimento = new System.Windows.Forms.GroupBox();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -58,6 +56,14 @@
             this.pRODUTOCOSIFBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIMENTOMANUALBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIMENTO_MANUALTableAdapter = new Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters.MOVIMENTO_MANUALTableAdapter();
+            this.movimentosManuaisDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mOVIMENTOMANUALBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKPRODUTOCOSIFPRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblProdutos2 = new System.Windows.Forms.Label();
+            this.lblCosif2 = new System.Windows.Forms.Label();
+            this.pRODUTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbProduto = new System.Windows.Forms.ComboBox();
+            this.cbCosif = new System.Windows.Forms.ComboBox();
             this.gbMovimento.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).BeginInit();
@@ -65,6 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPRODUTOCOSIFPRODUTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMes
@@ -162,35 +172,10 @@
             this.txtDescricao.Size = new System.Drawing.Size(272, 87);
             this.txtDescricao.TabIndex = 11;
             // 
-            // cbProduto
-            // 
-            this.cbProduto.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pRODUTOCOSIFBindingSource, "COD_PRODUTO", true));
-            this.cbProduto.DataSource = this.pRODUTOBindingSource;
-            this.cbProduto.DisplayMember = "DES_PRODUTO";
-            this.cbProduto.Enabled = false;
-            this.cbProduto.FormattingEnabled = true;
-            this.cbProduto.Location = new System.Drawing.Point(103, 61);
-            this.cbProduto.Name = "cbProduto";
-            this.cbProduto.Size = new System.Drawing.Size(106, 21);
-            this.cbProduto.TabIndex = 12;
-            this.cbProduto.Text = "[Selecione]";
-            this.cbProduto.ValueMember = "COD_PRODUTO";
-            // 
-            // cbCosif
-            // 
-            this.cbCosif.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mOVIMENTOMANUALBindingSource, "COD_COSIF", true));
-            this.cbCosif.DataSource = this.pRODUTOCOSIFBindingSource1;
-            this.cbCosif.DisplayMember = "COD_COSIF";
-            this.cbCosif.Enabled = false;
-            this.cbCosif.FormattingEnabled = true;
-            this.cbCosif.Location = new System.Drawing.Point(269, 65);
-            this.cbCosif.Name = "cbCosif";
-            this.cbCosif.Size = new System.Drawing.Size(106, 21);
-            this.cbCosif.TabIndex = 13;
-            this.cbCosif.ValueMember = "COD_CLASSIFICACAO";
-            // 
             // gbMovimento
             // 
+            this.gbMovimento.Controls.Add(this.cbCosif);
+            this.gbMovimento.Controls.Add(this.cbProduto);
             this.gbMovimento.Controls.Add(this.btnIncluir);
             this.gbMovimento.Controls.Add(this.btnNovo);
             this.gbMovimento.Controls.Add(this.btnLimpar);
@@ -335,15 +320,77 @@
             // 
             this.mOVIMENTO_MANUALTableAdapter.ClearBeforeFill = true;
             // 
+            // movimentosManuaisDataSetBindingSource
+            // 
+            this.movimentosManuaisDataSetBindingSource.DataSource = this.movimentosManuaisDataSet;
+            this.movimentosManuaisDataSetBindingSource.Position = 0;
+            // 
+            // mOVIMENTOMANUALBindingSource1
+            // 
+            this.mOVIMENTOMANUALBindingSource1.DataMember = "MOVIMENTO_MANUAL";
+            this.mOVIMENTOMANUALBindingSource1.DataSource = this.movimentosManuaisDataSetBindingSource;
+            // 
+            // fKPRODUTOCOSIFPRODUTOBindingSource
+            // 
+            this.fKPRODUTOCOSIFPRODUTOBindingSource.DataMember = "FK_PRODUTO_COSIF_PRODUTO";
+            this.fKPRODUTOCOSIFPRODUTOBindingSource.DataSource = this.pRODUTOBindingSource;
+            // 
+            // lblProdutos2
+            // 
+            this.lblProdutos2.AutoSize = true;
+            this.lblProdutos2.Location = new System.Drawing.Point(446, 72);
+            this.lblProdutos2.Name = "lblProdutos2";
+            this.lblProdutos2.Size = new System.Drawing.Size(0, 13);
+            this.lblProdutos2.TabIndex = 18;
+            // 
+            // lblCosif2
+            // 
+            this.lblCosif2.AutoSize = true;
+            this.lblCosif2.Location = new System.Drawing.Point(432, 115);
+            this.lblCosif2.Name = "lblCosif2";
+            this.lblCosif2.Size = new System.Drawing.Size(0, 13);
+            this.lblCosif2.TabIndex = 19;
+            // 
+            // pRODUTOBindingSource1
+            // 
+            this.pRODUTOBindingSource1.DataMember = "PRODUTO";
+            this.pRODUTOBindingSource1.DataSource = this.movimentosManuaisDataSet;
+            // 
+            // cbProduto
+            // 
+            this.cbProduto.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pRODUTOCOSIFBindingSource1, "COD_CLASSIFICACAO", true));
+            this.cbProduto.DataSource = this.pRODUTOBindingSource1;
+            this.cbProduto.DisplayMember = "DES_PRODUTO";
+            this.cbProduto.Enabled = false;
+            this.cbProduto.FormattingEnabled = true;
+            this.cbProduto.Location = new System.Drawing.Point(91, 66);
+            this.cbProduto.Name = "cbProduto";
+            this.cbProduto.Size = new System.Drawing.Size(106, 25);
+            this.cbProduto.TabIndex = 20;
+            this.cbProduto.ValueMember = "COD_PRODUTO";
+            // 
+            // cbCosif
+            // 
+            this.cbCosif.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pRODUTOCOSIFBindingSource1, "COD_CLASSIFICACAO", true));
+            this.cbCosif.DataSource = this.pRODUTOCOSIFBindingSource;
+            this.cbCosif.DisplayMember = "COD_COSIF";
+            this.cbCosif.Enabled = false;
+            this.cbCosif.FormattingEnabled = true;
+            this.cbCosif.Location = new System.Drawing.Point(257, 67);
+            this.cbCosif.Name = "cbCosif";
+            this.cbCosif.Size = new System.Drawing.Size(106, 25);
+            this.cbCosif.TabIndex = 21;
+            this.cbCosif.ValueMember = "COD_CLASSIFICACAO";
+            // 
             // Consulta_Movimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(711, 447);
+            this.Controls.Add(this.lblCosif2);
+            this.Controls.Add(this.lblProdutos2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cbCosif);
-            this.Controls.Add(this.cbProduto);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtAno);
@@ -369,6 +416,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPRODUTOCOSIFPRODUTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,8 +445,6 @@
         public System.Windows.Forms.TextBox txtAno;
         public System.Windows.Forms.TextBox txtValor;
         public System.Windows.Forms.TextBox txtDescricao;
-        public System.Windows.Forms.ComboBox cbProduto;
-        public System.Windows.Forms.ComboBox cbCosif;
         private MovimentosManuaisDataSet movimentosManuaisDataSet;
         private System.Windows.Forms.BindingSource pRODUTOBindingSource;
         private MovimentosManuaisDataSetTableAdapters.PRODUTOTableAdapter pRODUTOTableAdapter;
@@ -404,6 +453,14 @@
         private System.Windows.Forms.BindingSource pRODUTOCOSIFBindingSource1;
         private System.Windows.Forms.BindingSource mOVIMENTOMANUALBindingSource;
         private MovimentosManuaisDataSetTableAdapters.MOVIMENTO_MANUALTableAdapter mOVIMENTO_MANUALTableAdapter;
+        private System.Windows.Forms.BindingSource movimentosManuaisDataSetBindingSource;
+        private System.Windows.Forms.BindingSource mOVIMENTOMANUALBindingSource1;
+        private System.Windows.Forms.BindingSource fKPRODUTOCOSIFPRODUTOBindingSource;
+        private System.Windows.Forms.Label lblProdutos2;
+        private System.Windows.Forms.Label lblCosif2;
+        private System.Windows.Forms.BindingSource pRODUTOBindingSource1;
+        public System.Windows.Forms.ComboBox cbProduto;
+        public System.Windows.Forms.ComboBox cbCosif;
     }
 }
 

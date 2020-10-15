@@ -26,6 +26,7 @@ namespace Movimentacao_Manual.DAL
                 cmd.Parameters.Add("@cosif", SqlDbType.Char).Value = cosif;
                 cmd.Parameters.Add("@descricao", SqlDbType.VarChar).Value = descricao;
                 cmd.Parameters.Add("@valor", SqlDbType.Real).Value = valor;
+                cmd.Parameters.Add("@Acao", SqlDbType.VarChar).Value = "Inserir";
                 cmd.ExecuteNonQuery();
                 this.mensagem = "Cadastrado com sucesso";
                 conec.Desconectar();
@@ -39,8 +40,25 @@ namespace Movimentacao_Manual.DAL
 
             return mensagem;
         }
-        
-      
+
+        //******************************************************************************************
+        //Não Utilizado
+        public void CarregarProdutos()
+        {
+            cmd.Connection = conec.Conectar();
+            Consulta_Movimentos consulta = new Consulta_Movimentos();
+            SqlDataAdapter ListaAdapter = new SqlDataAdapter("SELECT * FROM PRODUTO", conec.con);
+            DataTable TabelaDataTable = new DataTable();
+
+            ListaAdapter.Fill(TabelaDataTable);
+            consulta.cbProduto.DataSource = TabelaDataTable;
+            consulta.cbProduto.ValueMember = "COD_PRODUTO";
+            consulta.cbProduto.DisplayMember = "DES_PRODUTO";
+            consulta.cbProduto.SelectedItem = "";
+            consulta.cbProduto.Refresh();
+            conec.Desconectar(); ;
+        }
+        //******************************************************************************************
     }
 }
 
