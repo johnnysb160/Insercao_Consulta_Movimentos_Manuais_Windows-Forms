@@ -88,7 +88,17 @@ SELECT DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCRICAO, 
               <Mapping SourceColumn="COD_USUARIO" DataSetColumn="COD_USUARIO" />
               <Mapping SourceColumn="VAL_VALOR" DataSetColumn="VAL_VALOR" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="MovimentosManuaisConnectionString (Settings)" DbObjectName="MovimentosManuais.dbo.MOVIMENTO_MANUAL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCRICAO, DAT_MOVIMENTO, COD_USUARIO, VAL_VALOR
+FROM            MOVIMENTO_MANUAL</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PRODUTOTableAdapter" GeneratorDataComponentClassName="PRODUTOTableAdapter" Name="PRODUTO" UserDataComponentName="PRODUTOTableAdapter">
             <MainSource>
@@ -217,7 +227,7 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
   <xs:element name="MovimentosManuaisDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MovimentosManuaisDataSet" msprop:Generator_UserDSName="MovimentosManuaisDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MOVIMENTO_MANUAL" msprop:Generator_TableClassName="MOVIMENTO_MANUALDataTable" msprop:Generator_TableVarName="tableMOVIMENTO_MANUAL" msprop:Generator_TablePropName="MOVIMENTO_MANUAL" msprop:Generator_RowDeletingName="MOVIMENTO_MANUALRowDeleting" msprop:Generator_RowChangingName="MOVIMENTO_MANUALRowChanging" msprop:Generator_RowEvHandlerName="MOVIMENTO_MANUALRowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIMENTO_MANUALRowDeleted" msprop:Generator_UserTableName="MOVIMENTO_MANUAL" msprop:Generator_RowChangedName="MOVIMENTO_MANUALRowChanged" msprop:Generator_RowEvArgName="MOVIMENTO_MANUALRowChangeEvent" msprop:Generator_RowClassName="MOVIMENTO_MANUALRow">
+        <xs:element name="MOVIMENTO_MANUAL" msprop:Generator_TableClassName="MOVIMENTO_MANUALDataTable" msprop:Generator_TableVarName="tableMOVIMENTO_MANUAL" msprop:Generator_RowChangedName="MOVIMENTO_MANUALRowChanged" msprop:Generator_TablePropName="MOVIMENTO_MANUAL" msprop:Generator_RowDeletingName="MOVIMENTO_MANUALRowDeleting" msprop:Generator_RowChangingName="MOVIMENTO_MANUALRowChanging" msprop:Generator_RowEvHandlerName="MOVIMENTO_MANUALRowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIMENTO_MANUALRowDeleted" msprop:Generator_RowClassName="MOVIMENTO_MANUALRow" msprop:Generator_UserTableName="MOVIMENTO_MANUAL" msprop:Generator_RowEvArgName="MOVIMENTO_MANUALRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DAT_MES" msprop:Generator_ColumnVarNameInTable="columnDAT_MES" msprop:Generator_ColumnPropNameInRow="DAT_MES" msprop:Generator_ColumnPropNameInTable="DAT_MESColumn" msprop:Generator_UserColumnName="DAT_MES" type="xs:decimal" />
@@ -256,7 +266,7 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PRODUTO" msprop:Generator_TableClassName="PRODUTODataTable" msprop:Generator_TableVarName="tablePRODUTO" msprop:Generator_TablePropName="PRODUTO" msprop:Generator_RowDeletingName="PRODUTORowDeleting" msprop:Generator_RowChangingName="PRODUTORowChanging" msprop:Generator_RowEvHandlerName="PRODUTORowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUTORowDeleted" msprop:Generator_UserTableName="PRODUTO" msprop:Generator_RowChangedName="PRODUTORowChanged" msprop:Generator_RowEvArgName="PRODUTORowChangeEvent" msprop:Generator_RowClassName="PRODUTORow">
+        <xs:element name="PRODUTO" msprop:Generator_TableClassName="PRODUTODataTable" msprop:Generator_TableVarName="tablePRODUTO" msprop:Generator_RowChangedName="PRODUTORowChanged" msprop:Generator_TablePropName="PRODUTO" msprop:Generator_RowDeletingName="PRODUTORowDeleting" msprop:Generator_RowChangingName="PRODUTORowChanging" msprop:Generator_RowEvHandlerName="PRODUTORowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUTORowDeleted" msprop:Generator_RowClassName="PRODUTORow" msprop:Generator_UserTableName="PRODUTO" msprop:Generator_RowEvArgName="PRODUTORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="COD_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnCOD_PRODUTO" msprop:Generator_ColumnPropNameInRow="COD_PRODUTO" msprop:Generator_ColumnPropNameInTable="COD_PRODUTOColumn" msprop:Generator_UserColumnName="COD_PRODUTO">
@@ -283,7 +293,7 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PRODUTO_COSIF" msprop:Generator_TableClassName="PRODUTO_COSIFDataTable" msprop:Generator_TableVarName="tablePRODUTO_COSIF" msprop:Generator_TablePropName="PRODUTO_COSIF" msprop:Generator_RowDeletingName="PRODUTO_COSIFRowDeleting" msprop:Generator_RowChangingName="PRODUTO_COSIFRowChanging" msprop:Generator_RowEvHandlerName="PRODUTO_COSIFRowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUTO_COSIFRowDeleted" msprop:Generator_UserTableName="PRODUTO_COSIF" msprop:Generator_RowChangedName="PRODUTO_COSIFRowChanged" msprop:Generator_RowEvArgName="PRODUTO_COSIFRowChangeEvent" msprop:Generator_RowClassName="PRODUTO_COSIFRow">
+        <xs:element name="PRODUTO_COSIF" msprop:Generator_TableClassName="PRODUTO_COSIFDataTable" msprop:Generator_TableVarName="tablePRODUTO_COSIF" msprop:Generator_RowChangedName="PRODUTO_COSIFRowChanged" msprop:Generator_TablePropName="PRODUTO_COSIF" msprop:Generator_RowDeletingName="PRODUTO_COSIFRowDeleting" msprop:Generator_RowChangingName="PRODUTO_COSIFRowChanging" msprop:Generator_RowEvHandlerName="PRODUTO_COSIFRowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUTO_COSIFRowDeleted" msprop:Generator_RowClassName="PRODUTO_COSIFRow" msprop:Generator_UserTableName="PRODUTO_COSIF" msprop:Generator_RowEvArgName="PRODUTO_COSIFRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="COD_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnCOD_PRODUTO" msprop:Generator_ColumnPropNameInRow="COD_PRODUTO" msprop:Generator_ColumnPropNameInTable="COD_PRODUTOColumn" msprop:Generator_UserColumnName="COD_PRODUTO">
@@ -339,8 +349,8 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_MOVIMENTO_MANUAL_PRODUTO_COSIF" msdata:parent="PRODUTO_COSIF" msdata:child="MOVIMENTO_MANUAL" msdata:parentkey="COD_PRODUTO COD_COSIF" msdata:childkey="COD_PRODUTO COD_COSIF" msprop:Generator_UserChildTable="MOVIMENTO_MANUAL" msprop:Generator_ChildPropName="GetMOVIMENTO_MANUALRows" msprop:Generator_UserRelationName="FK_MOVIMENTO_MANUAL_PRODUTO_COSIF" msprop:Generator_RelationVarName="relationFK_MOVIMENTO_MANUAL_PRODUTO_COSIF" msprop:Generator_UserParentTable="PRODUTO_COSIF" msprop:Generator_ParentPropName="PRODUTO_COSIFRowParent" />
-      <msdata:Relationship name="FK_PRODUTO_COSIF_PRODUTO" msdata:parent="PRODUTO" msdata:child="PRODUTO_COSIF" msdata:parentkey="COD_PRODUTO" msdata:childkey="COD_PRODUTO" msprop:Generator_UserChildTable="PRODUTO_COSIF" msprop:Generator_ChildPropName="GetPRODUTO_COSIFRows" msprop:Generator_UserRelationName="FK_PRODUTO_COSIF_PRODUTO" msprop:Generator_ParentPropName="PRODUTORow" msprop:Generator_RelationVarName="relationFK_PRODUTO_COSIF_PRODUTO" msprop:Generator_UserParentTable="PRODUTO" />
+      <msdata:Relationship name="FK_MOVIMENTO_MANUAL_PRODUTO_COSIF" msdata:parent="PRODUTO_COSIF" msdata:child="MOVIMENTO_MANUAL" msdata:parentkey="COD_PRODUTO COD_COSIF" msdata:childkey="COD_PRODUTO COD_COSIF" msprop:Generator_UserChildTable="MOVIMENTO_MANUAL" msprop:Generator_ChildPropName="GetMOVIMENTO_MANUALRows" msprop:Generator_UserRelationName="FK_MOVIMENTO_MANUAL_PRODUTO_COSIF" msprop:Generator_ParentPropName="PRODUTO_COSIFRowParent" msprop:Generator_RelationVarName="relationFK_MOVIMENTO_MANUAL_PRODUTO_COSIF" msprop:Generator_UserParentTable="PRODUTO_COSIF" />
+      <msdata:Relationship name="FK_PRODUTO_COSIF_PRODUTO" msdata:parent="PRODUTO" msdata:child="PRODUTO_COSIF" msdata:parentkey="COD_PRODUTO" msdata:childkey="COD_PRODUTO" msprop:Generator_UserChildTable="PRODUTO_COSIF" msprop:Generator_ChildPropName="GetPRODUTO_COSIFRows" msprop:Generator_UserRelationName="FK_PRODUTO_COSIF_PRODUTO" msprop:Generator_RelationVarName="relationFK_PRODUTO_COSIF_PRODUTO" msprop:Generator_UserParentTable="PRODUTO" msprop:Generator_ParentPropName="PRODUTORow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

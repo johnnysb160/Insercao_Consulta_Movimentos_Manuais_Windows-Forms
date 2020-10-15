@@ -13,6 +13,7 @@ namespace Movimentacao_Manual.DAL
         public string mensagem = "";
         SqlCommand cmd = new SqlCommand();
         Conexao conec = new Conexao();
+
         public string Inclusao(string mes, string ano, string produto, string cosif, string valor, string descricao)
         {
             try
@@ -35,11 +36,15 @@ namespace Movimentacao_Manual.DAL
             catch (SqlException e)
             {
 
-                this.mensagem = "Erro com o Banco de Dados"+e.Message;
+                this.mensagem = "Erro com o Banco de Dados" + e.Message;
             }
 
             return mensagem;
         }
+
+
+
+
 
         //******************************************************************************************
         //Não Utilizado

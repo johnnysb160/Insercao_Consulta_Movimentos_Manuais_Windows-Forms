@@ -40,9 +40,7 @@ namespace Movimentacao_Manual
             txtAno.Enabled = false;
             txtAno.Text = "";
             cbProduto.Enabled = false;
-            cbProduto.Text = "";
             cbCosif.Enabled = false;
-            cbCosif.Text = "";
             txtValor.Enabled = false;
             txtValor.Text = "";
             txtDescricao.Enabled = false;
@@ -102,6 +100,13 @@ namespace Movimentacao_Manual
             this.pRODUTO_COSIFTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO_COSIF);
             // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.PRODUTO'. Você pode movê-la ou removê-la conforme necessário.
             this.pRODUTOTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO);
+
+        }
+
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
