@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NovoConjunto" targetNamespace="http://tempuri.org/NovoConjunto.xsd" xmlns:mstns="http://tempuri.org/NovoConjunto.xsd" xmlns="http://tempuri.org/NovoConjunto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MovimentosManuaisConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MovimentosManuaisConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Movimentacao_Manual.Properties.Settings.GlobalReference.Default.MovimentosManuaisConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MOVIMENTO_MANUALTableAdapter" GeneratorDataComponentClassName="MOVIMENTO_MANUALTableAdapter" Name="MOVIMENTO_MANUAL" UserDataComponentName="MOVIMENTO_MANUALTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MovimentosManuaisConnectionString (Settings)" DbObjectName="MovimentosManuais.dbo.MOVIMENTO_MANUAL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, DES_DESCRICAO, VAL_VALOR FROM dbo.MOVIMENTO_MANUAL</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DAT_ANO" DataSetColumn="DAT_ANO" />
+              <Mapping SourceColumn="NUM_LANCAMENTO" DataSetColumn="NUM_LANCAMENTO" />
+              <Mapping SourceColumn="COD_PRODUTO" DataSetColumn="COD_PRODUTO" />
+              <Mapping SourceColumn="DES_DESCRICAO" DataSetColumn="DES_DESCRICAO" />
+              <Mapping SourceColumn="VAL_VALOR" DataSetColumn="VAL_VALOR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PRODUTOTableAdapter" GeneratorDataComponentClassName="PRODUTOTableAdapter" Name="PRODUTO" UserDataComponentName="PRODUTOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MovimentosManuaisConnectionString (Settings)" DbObjectName="MovimentosManuais.dbo.PRODUTO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DES_PRODUTO FROM dbo.PRODUTO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DES_PRODUTO" DataSetColumn="DES_PRODUTO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NovoConjunto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NovoConjunto" msprop:Generator_UserDSName="NovoConjunto">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MOVIMENTO_MANUAL" msprop:Generator_TableClassName="MOVIMENTO_MANUALDataTable" msprop:Generator_TableVarName="tableMOVIMENTO_MANUAL" msprop:Generator_TablePropName="MOVIMENTO_MANUAL" msprop:Generator_RowDeletingName="MOVIMENTO_MANUALRowDeleting" msprop:Generator_RowChangingName="MOVIMENTO_MANUALRowChanging" msprop:Generator_RowEvHandlerName="MOVIMENTO_MANUALRowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIMENTO_MANUALRowDeleted" msprop:Generator_UserTableName="MOVIMENTO_MANUAL" msprop:Generator_RowChangedName="MOVIMENTO_MANUALRowChanged" msprop:Generator_RowEvArgName="MOVIMENTO_MANUALRowChangeEvent" msprop:Generator_RowClassName="MOVIMENTO_MANUALRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DAT_ANO" msprop:Generator_ColumnVarNameInTable="columnDAT_ANO" msprop:Generator_ColumnPropNameInRow="DAT_ANO" msprop:Generator_ColumnPropNameInTable="DAT_ANOColumn" msprop:Generator_UserColumnName="DAT_ANO" type="xs:decimal" />
+              <xs:element name="NUM_LANCAMENTO" msprop:Generator_ColumnVarNameInTable="columnNUM_LANCAMENTO" msprop:Generator_ColumnPropNameInRow="NUM_LANCAMENTO" msprop:Generator_ColumnPropNameInTable="NUM_LANCAMENTOColumn" msprop:Generator_UserColumnName="NUM_LANCAMENTO" type="xs:decimal" />
+              <xs:element name="COD_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnCOD_PRODUTO" msprop:Generator_ColumnPropNameInRow="COD_PRODUTO" msprop:Generator_ColumnPropNameInTable="COD_PRODUTOColumn" msprop:Generator_UserColumnName="COD_PRODUTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DES_DESCRICAO" msprop:Generator_ColumnVarNameInTable="columnDES_DESCRICAO" msprop:Generator_ColumnPropNameInRow="DES_DESCRICAO" msprop:Generator_ColumnPropNameInTable="DES_DESCRICAOColumn" msprop:Generator_UserColumnName="DES_DESCRICAO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VAL_VALOR" msprop:Generator_ColumnVarNameInTable="columnVAL_VALOR" msprop:Generator_ColumnPropNameInRow="VAL_VALOR" msprop:Generator_ColumnPropNameInTable="VAL_VALORColumn" msprop:Generator_UserColumnName="VAL_VALOR" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PRODUTO" msprop:Generator_TableClassName="PRODUTODataTable" msprop:Generator_TableVarName="tablePRODUTO" msprop:Generator_TablePropName="PRODUTO" msprop:Generator_RowDeletingName="PRODUTORowDeleting" msprop:Generator_RowChangingName="PRODUTORowChanging" msprop:Generator_RowEvHandlerName="PRODUTORowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUTORowDeleted" msprop:Generator_UserTableName="PRODUTO" msprop:Generator_RowChangedName="PRODUTORowChanged" msprop:Generator_RowEvArgName="PRODUTORowChangeEvent" msprop:Generator_RowClassName="PRODUTORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DES_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnDES_PRODUTO" msprop:Generator_ColumnPropNameInRow="DES_PRODUTO" msprop:Generator_ColumnPropNameInTable="DES_PRODUTOColumn" msprop:Generator_UserColumnName="DES_PRODUTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

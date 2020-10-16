@@ -20,25 +20,19 @@ namespace Movimentacao_Manual {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("MovimentosManuaisDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("NovoConjuntoDados")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class MovimentosManuaisDataSet : global::System.Data.DataSet {
+    public partial class NovoConjuntoDados : global::System.Data.DataSet {
         
         private MOVIMENTO_MANUALDataTable tableMOVIMENTO_MANUAL;
         
         private PRODUTODataTable tablePRODUTO;
         
-        private PRODUTO_COSIFDataTable tablePRODUTO_COSIF;
-        
-        private global::System.Data.DataRelation relationFK_MOVIMENTO_MANUAL_PRODUTO_COSIF;
-        
-        private global::System.Data.DataRelation relationFK_PRODUTO_COSIF_PRODUTO;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public MovimentosManuaisDataSet() {
+        public NovoConjuntoDados() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +43,7 @@ namespace Movimentacao_Manual {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected MovimentosManuaisDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected NovoConjuntoDados(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -67,9 +61,6 @@ namespace Movimentacao_Manual {
                 }
                 if ((ds.Tables["PRODUTO"] != null)) {
                     base.Tables.Add(new PRODUTODataTable(ds.Tables["PRODUTO"]));
-                }
-                if ((ds.Tables["PRODUTO_COSIF"] != null)) {
-                    base.Tables.Add(new PRODUTO_COSIFDataTable(ds.Tables["PRODUTO_COSIF"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -106,16 +97,6 @@ namespace Movimentacao_Manual {
         public PRODUTODataTable PRODUTO {
             get {
                 return this.tablePRODUTO;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PRODUTO_COSIFDataTable PRODUTO_COSIF {
-            get {
-                return this.tablePRODUTO_COSIF;
             }
         }
         
@@ -161,7 +142,7 @@ namespace Movimentacao_Manual {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            MovimentosManuaisDataSet cln = ((MovimentosManuaisDataSet)(base.Clone()));
+            NovoConjuntoDados cln = ((NovoConjuntoDados)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -191,9 +172,6 @@ namespace Movimentacao_Manual {
                 }
                 if ((ds.Tables["PRODUTO"] != null)) {
                     base.Tables.Add(new PRODUTODataTable(ds.Tables["PRODUTO"]));
-                }
-                if ((ds.Tables["PRODUTO_COSIF"] != null)) {
-                    base.Tables.Add(new PRODUTO_COSIFDataTable(ds.Tables["PRODUTO_COSIF"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -240,40 +218,20 @@ namespace Movimentacao_Manual {
                     this.tablePRODUTO.InitVars();
                 }
             }
-            this.tablePRODUTO_COSIF = ((PRODUTO_COSIFDataTable)(base.Tables["PRODUTO_COSIF"]));
-            if ((initTable == true)) {
-                if ((this.tablePRODUTO_COSIF != null)) {
-                    this.tablePRODUTO_COSIF.InitVars();
-                }
-            }
-            this.relationFK_MOVIMENTO_MANUAL_PRODUTO_COSIF = this.Relations["FK_MOVIMENTO_MANUAL_PRODUTO_COSIF"];
-            this.relationFK_PRODUTO_COSIF_PRODUTO = this.Relations["FK_PRODUTO_COSIF_PRODUTO"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "MovimentosManuaisDataSet";
+            this.DataSetName = "NovoConjuntoDados";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/MovimentosManuaisDataSet.xsd";
+            this.Namespace = "http://tempuri.org/NovoConjuntoDados.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableMOVIMENTO_MANUAL = new MOVIMENTO_MANUALDataTable();
             base.Tables.Add(this.tableMOVIMENTO_MANUAL);
             this.tablePRODUTO = new PRODUTODataTable();
             base.Tables.Add(this.tablePRODUTO);
-            this.tablePRODUTO_COSIF = new PRODUTO_COSIFDataTable();
-            base.Tables.Add(this.tablePRODUTO_COSIF);
-            this.relationFK_MOVIMENTO_MANUAL_PRODUTO_COSIF = new global::System.Data.DataRelation("FK_MOVIMENTO_MANUAL_PRODUTO_COSIF", new global::System.Data.DataColumn[] {
-                        this.tablePRODUTO_COSIF.COD_PRODUTOColumn,
-                        this.tablePRODUTO_COSIF.COD_COSIFColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMOVIMENTO_MANUAL.COD_PRODUTOColumn,
-                        this.tableMOVIMENTO_MANUAL.COD_COSIFColumn}, false);
-            this.Relations.Add(this.relationFK_MOVIMENTO_MANUAL_PRODUTO_COSIF);
-            this.relationFK_PRODUTO_COSIF_PRODUTO = new global::System.Data.DataRelation("FK_PRODUTO_COSIF_PRODUTO", new global::System.Data.DataColumn[] {
-                        this.tablePRODUTO.COD_PRODUTOColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePRODUTO_COSIF.COD_PRODUTOColumn}, false);
-            this.Relations.Add(this.relationFK_PRODUTO_COSIF_PRODUTO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -290,12 +248,6 @@ namespace Movimentacao_Manual {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePRODUTO_COSIF() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -305,7 +257,7 @@ namespace Movimentacao_Manual {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            MovimentosManuaisDataSet ds = new MovimentosManuaisDataSet();
+            NovoConjuntoDados ds = new NovoConjuntoDados();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -354,9 +306,6 @@ namespace Movimentacao_Manual {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void PRODUTORowChangeEventHandler(object sender, PRODUTORowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void PRODUTO_COSIFRowChangeEventHandler(object sender, PRODUTO_COSIFRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -688,7 +637,7 @@ namespace Movimentacao_Manual {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MovimentosManuaisDataSet ds = new MovimentosManuaisDataSet();
+                NovoConjuntoDados ds = new NovoConjuntoDados();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -977,7 +926,7 @@ namespace Movimentacao_Manual {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MovimentosManuaisDataSet ds = new MovimentosManuaisDataSet();
+                NovoConjuntoDados ds = new NovoConjuntoDados();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -996,315 +945,6 @@ namespace Movimentacao_Manual {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PRODUTODataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PRODUTO_COSIFDataTable : global::System.Data.TypedTableBase<PRODUTO_COSIFRow> {
-            
-            private global::System.Data.DataColumn columnCOD_PRODUTO;
-            
-            private global::System.Data.DataColumn columnCOD_COSIF;
-            
-            private global::System.Data.DataColumn columnCOD_CLASSIFICACAO;
-            
-            private global::System.Data.DataColumn columnSTA_STATUS;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFDataTable() {
-                this.TableName = "PRODUTO_COSIF";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PRODUTO_COSIFDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected PRODUTO_COSIFDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn COD_PRODUTOColumn {
-                get {
-                    return this.columnCOD_PRODUTO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn COD_COSIFColumn {
-                get {
-                    return this.columnCOD_COSIF;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn COD_CLASSIFICACAOColumn {
-                get {
-                    return this.columnCOD_CLASSIFICACAO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn STA_STATUSColumn {
-                get {
-                    return this.columnSTA_STATUS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow this[int index] {
-                get {
-                    return ((PRODUTO_COSIFRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PRODUTO_COSIFRowChangeEventHandler PRODUTO_COSIFRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PRODUTO_COSIFRowChangeEventHandler PRODUTO_COSIFRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PRODUTO_COSIFRowChangeEventHandler PRODUTO_COSIFRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PRODUTO_COSIFRowChangeEventHandler PRODUTO_COSIFRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddPRODUTO_COSIFRow(PRODUTO_COSIFRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow AddPRODUTO_COSIFRow(PRODUTORow parentPRODUTORowByFK_PRODUTO_COSIF_PRODUTO, string COD_COSIF, string COD_CLASSIFICACAO, string STA_STATUS) {
-                PRODUTO_COSIFRow rowPRODUTO_COSIFRow = ((PRODUTO_COSIFRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        COD_COSIF,
-                        COD_CLASSIFICACAO,
-                        STA_STATUS};
-                if ((parentPRODUTORowByFK_PRODUTO_COSIF_PRODUTO != null)) {
-                    columnValuesArray[0] = parentPRODUTORowByFK_PRODUTO_COSIF_PRODUTO[0];
-                }
-                rowPRODUTO_COSIFRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPRODUTO_COSIFRow);
-                return rowPRODUTO_COSIFRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow FindByCOD_PRODUTOCOD_COSIF(string COD_PRODUTO, string COD_COSIF) {
-                return ((PRODUTO_COSIFRow)(this.Rows.Find(new object[] {
-                            COD_PRODUTO,
-                            COD_COSIF})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                PRODUTO_COSIFDataTable cln = ((PRODUTO_COSIFDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new PRODUTO_COSIFDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnCOD_PRODUTO = base.Columns["COD_PRODUTO"];
-                this.columnCOD_COSIF = base.Columns["COD_COSIF"];
-                this.columnCOD_CLASSIFICACAO = base.Columns["COD_CLASSIFICACAO"];
-                this.columnSTA_STATUS = base.Columns["STA_STATUS"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnCOD_PRODUTO = new global::System.Data.DataColumn("COD_PRODUTO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOD_PRODUTO);
-                this.columnCOD_COSIF = new global::System.Data.DataColumn("COD_COSIF", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOD_COSIF);
-                this.columnCOD_CLASSIFICACAO = new global::System.Data.DataColumn("COD_CLASSIFICACAO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOD_CLASSIFICACAO);
-                this.columnSTA_STATUS = new global::System.Data.DataColumn("STA_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTA_STATUS);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCOD_PRODUTO,
-                                this.columnCOD_COSIF}, true));
-                this.columnCOD_PRODUTO.AllowDBNull = false;
-                this.columnCOD_PRODUTO.MaxLength = 4;
-                this.columnCOD_COSIF.AllowDBNull = false;
-                this.columnCOD_COSIF.MaxLength = 11;
-                this.columnCOD_CLASSIFICACAO.MaxLength = 6;
-                this.columnSTA_STATUS.MaxLength = 1;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow NewPRODUTO_COSIFRow() {
-                return ((PRODUTO_COSIFRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PRODUTO_COSIFRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(PRODUTO_COSIFRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.PRODUTO_COSIFRowChanged != null)) {
-                    this.PRODUTO_COSIFRowChanged(this, new PRODUTO_COSIFRowChangeEvent(((PRODUTO_COSIFRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.PRODUTO_COSIFRowChanging != null)) {
-                    this.PRODUTO_COSIFRowChanging(this, new PRODUTO_COSIFRowChangeEvent(((PRODUTO_COSIFRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.PRODUTO_COSIFRowDeleted != null)) {
-                    this.PRODUTO_COSIFRowDeleted(this, new PRODUTO_COSIFRowChangeEvent(((PRODUTO_COSIFRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.PRODUTO_COSIFRowDeleting != null)) {
-                    this.PRODUTO_COSIFRowDeleting(this, new PRODUTO_COSIFRowChangeEvent(((PRODUTO_COSIFRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovePRODUTO_COSIFRow(PRODUTO_COSIFRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MovimentosManuaisDataSet ds = new MovimentosManuaisDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PRODUTO_COSIFDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1457,17 +1097,6 @@ namespace Movimentacao_Manual {
                     this[this.tableMOVIMENTO_MANUAL.VAL_VALORColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow PRODUTO_COSIFRowParent {
-                get {
-                    return ((PRODUTO_COSIFRow)(this.GetParentRow(this.Table.ParentRelations["FK_MOVIMENTO_MANUAL_PRODUTO_COSIF"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_MOVIMENTO_MANUAL_PRODUTO_COSIF"]);
-                }
-            }
         }
         
         /// <summary>
@@ -1550,132 +1179,6 @@ namespace Movimentacao_Manual {
             public void SetSTA_STATUSNull() {
                 this[this.tablePRODUTO.STA_STATUSColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow[] GetPRODUTO_COSIFRows() {
-                if ((this.Table.ChildRelations["FK_PRODUTO_COSIF_PRODUTO"] == null)) {
-                    return new PRODUTO_COSIFRow[0];
-                }
-                else {
-                    return ((PRODUTO_COSIFRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PRODUTO_COSIF_PRODUTO"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class PRODUTO_COSIFRow : global::System.Data.DataRow {
-            
-            private PRODUTO_COSIFDataTable tablePRODUTO_COSIF;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PRODUTO_COSIFRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablePRODUTO_COSIF = ((PRODUTO_COSIFDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string COD_PRODUTO {
-                get {
-                    return ((string)(this[this.tablePRODUTO_COSIF.COD_PRODUTOColumn]));
-                }
-                set {
-                    this[this.tablePRODUTO_COSIF.COD_PRODUTOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string COD_COSIF {
-                get {
-                    return ((string)(this[this.tablePRODUTO_COSIF.COD_COSIFColumn]));
-                }
-                set {
-                    this[this.tablePRODUTO_COSIF.COD_COSIFColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string COD_CLASSIFICACAO {
-                get {
-                    try {
-                        return ((string)(this[this.tablePRODUTO_COSIF.COD_CLASSIFICACAOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'COD_CLASSIFICACAO\' na tabela \'PRODUTO_COSIF\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePRODUTO_COSIF.COD_CLASSIFICACAOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string STA_STATUS {
-                get {
-                    try {
-                        return ((string)(this[this.tablePRODUTO_COSIF.STA_STATUSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'STA_STATUS\' na tabela \'PRODUTO_COSIF\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePRODUTO_COSIF.STA_STATUSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTORow PRODUTORow {
-                get {
-                    return ((PRODUTORow)(this.GetParentRow(this.Table.ParentRelations["FK_PRODUTO_COSIF_PRODUTO"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PRODUTO_COSIF_PRODUTO"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCOD_CLASSIFICACAONull() {
-                return this.IsNull(this.tablePRODUTO_COSIF.COD_CLASSIFICACAOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCOD_CLASSIFICACAONull() {
-                this[this.tablePRODUTO_COSIF.COD_CLASSIFICACAOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSTA_STATUSNull() {
-                return this.IsNull(this.tablePRODUTO_COSIF.STA_STATUSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSTA_STATUSNull() {
-                this[this.tablePRODUTO_COSIF.STA_STATUSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MOVIMENTO_MANUALRow[] GetMOVIMENTO_MANUALRows() {
-                if ((this.Table.ChildRelations["FK_MOVIMENTO_MANUAL_PRODUTO_COSIF"] == null)) {
-                    return new MOVIMENTO_MANUALRow[0];
-                }
-                else {
-                    return ((MOVIMENTO_MANUALRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MOVIMENTO_MANUAL_PRODUTO_COSIF"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1745,43 +1248,9 @@ namespace Movimentacao_Manual {
                 }
             }
         }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class PRODUTO_COSIFRowChangeEvent : global::System.EventArgs {
-            
-            private PRODUTO_COSIFRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRowChangeEvent(PRODUTO_COSIFRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRODUTO_COSIFRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
     }
 }
-namespace Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters {
+namespace Movimentacao_Manual.NovoConjuntoDadosTableAdapters {
     
     
     /// <summary>
@@ -1977,35 +1446,19 @@ SELECT DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCRICAO, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCRICAO, D" +
                 "AT_MOVIMENTO, COD_USUARIO, VAL_VALOR FROM dbo.MOVIMENTO_MANUAL";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCR" +
-                "ICAO, DAT_MOVIMENTO, COD_USUARIO, VAL_VALOR\r\nFROM            MOVIMENTO_MANUAL";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.PROC_GRID";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mes", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 2, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ano", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 4, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@produto", global::System.Data.SqlDbType.Char, 4, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cosif", global::System.Data.SqlDbType.Char, 11, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descricao", global::System.Data.SqlDbType.Char, 11, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable dataTable) {
+        public virtual int Fill(NovoConjuntoDados.MOVIMENTO_MANUALDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2018,9 +1471,9 @@ SELECT DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCRICAO, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable GetData() {
+        public virtual NovoConjuntoDados.MOVIMENTO_MANUALDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable dataTable = new MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable();
+            NovoConjuntoDados.MOVIMENTO_MANUALDataTable dataTable = new NovoConjuntoDados.MOVIMENTO_MANUALDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2028,123 +1481,14 @@ SELECT DAT_MES, DAT_ANO, NUM_LANCAMENTO, COD_PRODUTO, COD_COSIF, DES_DESCRICAO, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillGrid(MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable dataTable, global::System.Nullable<decimal> mes, global::System.Nullable<decimal> ano, string produto, string cosif, string descricao, global::System.Nullable<decimal> valor) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((mes.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(mes.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((ano.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(ano.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((produto == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(produto));
-            }
-            if ((cosif == null)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(cosif));
-            }
-            if ((descricao == null)) {
-                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(descricao));
-            }
-            if ((valor.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[6].Value = ((decimal)(valor.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable GetDataBy1(global::System.Nullable<decimal> mes, global::System.Nullable<decimal> ano, string produto, string cosif, string descricao, global::System.Nullable<decimal> valor) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((mes.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(mes.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((ano.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(ano.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((produto == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(produto));
-            }
-            if ((cosif == null)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(cosif));
-            }
-            if ((descricao == null)) {
-                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(descricao));
-            }
-            if ((valor.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[6].Value = ((decimal)(valor.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable dataTable = new MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MovimentosManuaisDataSet.MOVIMENTO_MANUALDataTable dataTable) {
+        public virtual int Update(NovoConjuntoDados.MOVIMENTO_MANUALDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MovimentosManuaisDataSet dataSet) {
+        public virtual int Update(NovoConjuntoDados dataSet) {
             return this.Adapter.Update(dataSet, "MOVIMENTO_MANUAL");
         }
         
@@ -2548,7 +1892,7 @@ SELECT COD_PRODUTO, DES_PRODUTO, STA_STATUS FROM PRODUTO WHERE (COD_PRODUTO = @C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MovimentosManuaisDataSet.PRODUTODataTable dataTable) {
+        public virtual int Fill(NovoConjuntoDados.PRODUTODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2561,9 +1905,9 @@ SELECT COD_PRODUTO, DES_PRODUTO, STA_STATUS FROM PRODUTO WHERE (COD_PRODUTO = @C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MovimentosManuaisDataSet.PRODUTODataTable GetData() {
+        public virtual NovoConjuntoDados.PRODUTODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            MovimentosManuaisDataSet.PRODUTODataTable dataTable = new MovimentosManuaisDataSet.PRODUTODataTable();
+            NovoConjuntoDados.PRODUTODataTable dataTable = new NovoConjuntoDados.PRODUTODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2571,14 +1915,14 @@ SELECT COD_PRODUTO, DES_PRODUTO, STA_STATUS FROM PRODUTO WHERE (COD_PRODUTO = @C
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MovimentosManuaisDataSet.PRODUTODataTable dataTable) {
+        public virtual int Update(NovoConjuntoDados.PRODUTODataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MovimentosManuaisDataSet dataSet) {
+        public virtual int Update(NovoConjuntoDados dataSet) {
             return this.Adapter.Update(dataSet, "PRODUTO");
         }
         
@@ -2750,415 +2094,6 @@ SELECT COD_PRODUTO, DES_PRODUTO, STA_STATUS FROM PRODUTO WHERE (COD_PRODUTO = @C
     }
     
     /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PRODUTO_COSIFTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public PRODUTO_COSIFTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PRODUTO_COSIF";
-            tableMapping.ColumnMappings.Add("COD_PRODUTO", "COD_PRODUTO");
-            tableMapping.ColumnMappings.Add("COD_COSIF", "COD_COSIF");
-            tableMapping.ColumnMappings.Add("COD_CLASSIFICACAO", "COD_CLASSIFICACAO");
-            tableMapping.ColumnMappings.Add("STA_STATUS", "STA_STATUS");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PRODUTO_COSIF] WHERE (([COD_PRODUTO] = @Original_COD_PRODUTO) AND ([COD_COSIF] = @Original_COD_COSIF) AND ((@IsNull_COD_CLASSIFICACAO = 1 AND [COD_CLASSIFICACAO] IS NULL) OR ([COD_CLASSIFICACAO] = @Original_COD_CLASSIFICACAO)) AND ((@IsNull_STA_STATUS = 1 AND [STA_STATUS] IS NULL) OR ([STA_STATUS] = @Original_STA_STATUS)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COD_PRODUTO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COD_COSIF", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_COSIF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_COD_CLASSIFICACAO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_CLASSIFICACAO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COD_CLASSIFICACAO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_CLASSIFICACAO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STA_STATUS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STA_STATUS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STA_STATUS", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STA_STATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PRODUTO_COSIF] ([COD_PRODUTO], [COD_COSIF], [COD_CLASSIFICACAO], [STA_STATUS]) VALUES (@COD_PRODUTO, @COD_COSIF, @COD_CLASSIFICACAO, @STA_STATUS);
-SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF WHERE (COD_COSIF = @COD_COSIF) AND (COD_PRODUTO = @COD_PRODUTO)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COD_PRODUTO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COD_COSIF", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_COSIF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COD_CLASSIFICACAO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_CLASSIFICACAO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STA_STATUS", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STA_STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PRODUTO_COSIF] SET [COD_PRODUTO] = @COD_PRODUTO, [COD_COSIF] = @COD_COSIF, [COD_CLASSIFICACAO] = @COD_CLASSIFICACAO, [STA_STATUS] = @STA_STATUS WHERE (([COD_PRODUTO] = @Original_COD_PRODUTO) AND ([COD_COSIF] = @Original_COD_COSIF) AND ((@IsNull_COD_CLASSIFICACAO = 1 AND [COD_CLASSIFICACAO] IS NULL) OR ([COD_CLASSIFICACAO] = @Original_COD_CLASSIFICACAO)) AND ((@IsNull_STA_STATUS = 1 AND [STA_STATUS] IS NULL) OR ([STA_STATUS] = @Original_STA_STATUS)));
-SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF WHERE (COD_COSIF = @COD_COSIF) AND (COD_PRODUTO = @COD_PRODUTO)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COD_PRODUTO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COD_COSIF", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_COSIF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COD_CLASSIFICACAO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_CLASSIFICACAO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STA_STATUS", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STA_STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COD_PRODUTO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COD_COSIF", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_COSIF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_COD_CLASSIFICACAO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_CLASSIFICACAO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COD_CLASSIFICACAO", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COD_CLASSIFICACAO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STA_STATUS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STA_STATUS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STA_STATUS", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STA_STATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Movimentacao_Manual.Properties.Settings.Default.MovimentosManuaisConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM dbo.PRODUTO_COS" +
-                "IF";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MovimentosManuaisDataSet.PRODUTO_COSIFDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MovimentosManuaisDataSet.PRODUTO_COSIFDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            MovimentosManuaisDataSet.PRODUTO_COSIFDataTable dataTable = new MovimentosManuaisDataSet.PRODUTO_COSIFDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MovimentosManuaisDataSet.PRODUTO_COSIFDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MovimentosManuaisDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "PRODUTO_COSIF");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_COD_PRODUTO, string Original_COD_COSIF, string Original_COD_CLASSIFICACAO, string Original_STA_STATUS) {
-            if ((Original_COD_PRODUTO == null)) {
-                throw new global::System.ArgumentNullException("Original_COD_PRODUTO");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_COD_PRODUTO));
-            }
-            if ((Original_COD_COSIF == null)) {
-                throw new global::System.ArgumentNullException("Original_COD_COSIF");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_COD_COSIF));
-            }
-            if ((Original_COD_CLASSIFICACAO == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_COD_CLASSIFICACAO));
-            }
-            if ((Original_STA_STATUS == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_STA_STATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string COD_PRODUTO, string COD_COSIF, string COD_CLASSIFICACAO, string STA_STATUS) {
-            if ((COD_PRODUTO == null)) {
-                throw new global::System.ArgumentNullException("COD_PRODUTO");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(COD_PRODUTO));
-            }
-            if ((COD_COSIF == null)) {
-                throw new global::System.ArgumentNullException("COD_COSIF");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(COD_COSIF));
-            }
-            if ((COD_CLASSIFICACAO == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(COD_CLASSIFICACAO));
-            }
-            if ((STA_STATUS == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(STA_STATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string COD_PRODUTO, string COD_COSIF, string COD_CLASSIFICACAO, string STA_STATUS, string Original_COD_PRODUTO, string Original_COD_COSIF, string Original_COD_CLASSIFICACAO, string Original_STA_STATUS) {
-            if ((COD_PRODUTO == null)) {
-                throw new global::System.ArgumentNullException("COD_PRODUTO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(COD_PRODUTO));
-            }
-            if ((COD_COSIF == null)) {
-                throw new global::System.ArgumentNullException("COD_COSIF");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(COD_COSIF));
-            }
-            if ((COD_CLASSIFICACAO == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(COD_CLASSIFICACAO));
-            }
-            if ((STA_STATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(STA_STATUS));
-            }
-            if ((Original_COD_PRODUTO == null)) {
-                throw new global::System.ArgumentNullException("Original_COD_PRODUTO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_COD_PRODUTO));
-            }
-            if ((Original_COD_COSIF == null)) {
-                throw new global::System.ArgumentNullException("Original_COD_COSIF");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_COD_COSIF));
-            }
-            if ((Original_COD_CLASSIFICACAO == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_COD_CLASSIFICACAO));
-            }
-            if ((Original_STA_STATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_STA_STATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string COD_CLASSIFICACAO, string STA_STATUS, string Original_COD_PRODUTO, string Original_COD_COSIF, string Original_COD_CLASSIFICACAO, string Original_STA_STATUS) {
-            return this.Update(Original_COD_PRODUTO, Original_COD_COSIF, COD_CLASSIFICACAO, STA_STATUS, Original_COD_PRODUTO, Original_COD_COSIF, Original_COD_CLASSIFICACAO, Original_STA_STATUS);
-        }
-    }
-    
-    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3173,8 +2108,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
         private MOVIMENTO_MANUALTableAdapter _mOVIMENTO_MANUALTableAdapter;
         
         private PRODUTOTableAdapter _pRODUTOTableAdapter;
-        
-        private PRODUTO_COSIFTableAdapter _pRODUTO_COSIFTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -3221,20 +2154,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public PRODUTO_COSIFTableAdapter PRODUTO_COSIFTableAdapter {
-            get {
-                return this._pRODUTO_COSIFTableAdapter;
-            }
-            set {
-                this._pRODUTO_COSIFTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -3260,10 +2179,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
                             && (this._pRODUTOTableAdapter.Connection != null))) {
                     return this._pRODUTOTableAdapter.Connection;
                 }
-                if (((this._pRODUTO_COSIFTableAdapter != null) 
-                            && (this._pRODUTO_COSIFTableAdapter.Connection != null))) {
-                    return this._pRODUTO_COSIFTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -3283,9 +2198,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
                 if ((this._pRODUTOTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pRODUTO_COSIFTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -3295,32 +2207,23 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(MovimentosManuaisDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(NovoConjuntoDados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pRODUTOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pRODUTOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pRODUTO_COSIFTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTO_COSIF.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pRODUTO_COSIFTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._mOVIMENTO_MANUALTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.MOVIMENTO_MANUAL.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mOVIMENTO_MANUALTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._pRODUTOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pRODUTOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -3332,29 +2235,21 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(MovimentosManuaisDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(NovoConjuntoDados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pRODUTOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pRODUTOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._pRODUTO_COSIFTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PRODUTO_COSIF.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pRODUTO_COSIFTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._mOVIMENTO_MANUALTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MOVIMENTO_MANUAL.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mOVIMENTO_MANUALTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._pRODUTOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pRODUTOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -3366,29 +2261,21 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(MovimentosManuaisDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(NovoConjuntoDados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._mOVIMENTO_MANUALTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MOVIMENTO_MANUAL.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mOVIMENTO_MANUALTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._pRODUTO_COSIFTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTO_COSIF.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pRODUTO_COSIFTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._pRODUTOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._pRODUTOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._mOVIMENTO_MANUALTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MOVIMENTO_MANUAL.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mOVIMENTO_MANUALTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3424,7 +2311,7 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(MovimentosManuaisDataSet dataSet) {
+        public virtual int UpdateAll(NovoConjuntoDados dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -3438,11 +2325,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
             }
             if (((this._pRODUTOTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._pRODUTOTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
-                        "cadeia de conexão.");
-            }
-            if (((this._pRODUTO_COSIFTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pRODUTO_COSIFTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -3494,15 +2376,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
                     if (this._pRODUTOTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._pRODUTOTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._pRODUTOTableAdapter.Adapter);
-                    }
-                }
-                if ((this._pRODUTO_COSIFTableAdapter != null)) {
-                    revertConnections.Add(this._pRODUTO_COSIFTableAdapter, this._pRODUTO_COSIFTableAdapter.Connection);
-                    this._pRODUTO_COSIFTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pRODUTO_COSIFTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pRODUTO_COSIFTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pRODUTO_COSIFTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pRODUTO_COSIFTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3570,10 +2443,6 @@ SELECT COD_PRODUTO, COD_COSIF, COD_CLASSIFICACAO, STA_STATUS FROM PRODUTO_COSIF 
                 if ((this._pRODUTOTableAdapter != null)) {
                     this._pRODUTOTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pRODUTOTableAdapter]));
                     this._pRODUTOTableAdapter.Transaction = null;
-                }
-                if ((this._pRODUTO_COSIFTableAdapter != null)) {
-                    this._pRODUTO_COSIFTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pRODUTO_COSIFTableAdapter]));
-                    this._pRODUTO_COSIFTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
