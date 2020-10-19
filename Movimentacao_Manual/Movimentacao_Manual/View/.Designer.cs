@@ -42,22 +42,23 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.gbMovimento = new System.Windows.Forms.GroupBox();
             this.cbCosif = new System.Windows.Forms.ComboBox();
+            this.pRODUTOCOSIFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movimentosManuaisDataSet = new Movimentacao_Manual.MovimentosManuaisDataSet();
             this.cbProduto = new System.Windows.Forms.ComboBox();
-            this.pRODUTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.pRODUTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.movimentosManuaisDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIMENTOMANUALBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fKPRODUTOCOSIFPRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblProdutos2 = new System.Windows.Forms.Label();
             this.lblCosif2 = new System.Windows.Forms.Label();
             this.mOVIMENTOMANUALBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentosManuaisDataSet = new Movimentacao_Manual.MovimentosManuaisDataSet();
-            this.pRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pRODUTOTableAdapter = new Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters.PRODUTOTableAdapter();
-            this.pRODUTOCOSIFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIMENTO_MANUALTableAdapter = new Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters.MOVIMENTO_MANUALTableAdapter();
             this.mOVIMENTOMANUALBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pRODUTOCOSIFBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -70,25 +71,24 @@
             this.mOVIMENTO_MANUALBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIMENTO_MANUALTableAdapter1 = new Movimentacao_Manual.MovimentosManuaisDataSet_NovoTableAdapters.MOVIMENTO_MANUALTableAdapter();
             this.tableAdapterManager = new Movimentacao_Manual.MovimentosManuaisDataSet_NovoTableAdapters.TableAdapterManager();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gbMovimento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKPRODUTOCOSIFPRODUTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet_Novo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTO_MANUALBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -99,7 +99,7 @@
             this.lblMes.AutoSize = true;
             this.lblMes.BackColor = System.Drawing.Color.Transparent;
             this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes.Location = new System.Drawing.Point(20, 29);
+            this.lblMes.Location = new System.Drawing.Point(8, 30);
             this.lblMes.Name = "lblMes";
             this.lblMes.Size = new System.Drawing.Size(42, 17);
             this.lblMes.TabIndex = 0;
@@ -160,17 +160,21 @@
             // 
             this.txtMes.Enabled = false;
             this.txtMes.Location = new System.Drawing.Point(103, 26);
+            this.txtMes.MaxLength = 2;
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(106, 20);
-            this.txtMes.TabIndex = 7;
+            this.txtMes.TabIndex = 0;
+            this.txtMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMes_KeyPress);
             // 
             // txtAno
             // 
             this.txtAno.Enabled = false;
             this.txtAno.Location = new System.Drawing.Point(269, 29);
+            this.txtAno.MaxLength = 4;
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(106, 20);
-            this.txtAno.TabIndex = 9;
+            this.txtAno.TabIndex = 1;
+            this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
             // 
             // txtValor
             // 
@@ -178,7 +182,10 @@
             this.txtValor.Location = new System.Drawing.Point(103, 100);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(106, 20);
-            this.txtValor.TabIndex = 10;
+            this.txtValor.TabIndex = 2;
+            this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // txtDescricao
             // 
@@ -187,7 +194,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(272, 87);
-            this.txtDescricao.TabIndex = 11;
+            this.txtDescricao.TabIndex = 3;
             // 
             // gbMovimento
             // 
@@ -196,6 +203,7 @@
             this.gbMovimento.Controls.Add(this.btnIncluir);
             this.gbMovimento.Controls.Add(this.btnNovo);
             this.gbMovimento.Controls.Add(this.btnLimpar);
+            this.gbMovimento.Controls.Add(this.lblMes);
             this.gbMovimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMovimento.Location = new System.Drawing.Point(12, 2);
             this.gbMovimento.Name = "gbMovimento";
@@ -214,8 +222,18 @@
             this.cbCosif.Location = new System.Drawing.Point(257, 67);
             this.cbCosif.Name = "cbCosif";
             this.cbCosif.Size = new System.Drawing.Size(106, 25);
-            this.cbCosif.TabIndex = 21;
+            this.cbCosif.TabIndex = 1;
             this.cbCosif.ValueMember = "COD_CLASSIFICACAO";
+            // 
+            // pRODUTOCOSIFBindingSource
+            // 
+            this.pRODUTOCOSIFBindingSource.DataMember = "PRODUTO_COSIF";
+            this.pRODUTOCOSIFBindingSource.DataSource = this.movimentosManuaisDataSet;
+            // 
+            // movimentosManuaisDataSet
+            // 
+            this.movimentosManuaisDataSet.DataSetName = "MovimentosManuaisDataSet";
+            this.movimentosManuaisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbProduto
             // 
@@ -227,13 +245,14 @@
             this.cbProduto.Location = new System.Drawing.Point(91, 66);
             this.cbProduto.Name = "cbProduto";
             this.cbProduto.Size = new System.Drawing.Size(106, 25);
-            this.cbProduto.TabIndex = 20;
+            this.cbProduto.TabIndex = 0;
             this.cbProduto.TabStop = false;
             this.cbProduto.ValueMember = "COD_PRODUTO";
             // 
-            // pRODUTOBindingSource1
+            // pRODUTOBindingSource
             // 
-            this.pRODUTOBindingSource1.DataMember = "PRODUTO";
+            this.pRODUTOBindingSource.DataMember = "PRODUTO";
+            this.pRODUTOBindingSource.DataSource = this.movimentosManuaisDataSet;
             // 
             // btnIncluir
             // 
@@ -245,7 +264,7 @@
             this.btnIncluir.Location = new System.Drawing.Point(294, 225);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(69, 23);
-            this.btnIncluir.TabIndex = 2;
+            this.btnIncluir.TabIndex = 4;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
@@ -259,7 +278,7 @@
             this.btnNovo.Location = new System.Drawing.Point(190, 225);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(69, 23);
-            this.btnNovo.TabIndex = 1;
+            this.btnNovo.TabIndex = 3;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -274,10 +293,14 @@
             this.btnLimpar.Location = new System.Drawing.Point(91, 225);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(69, 23);
-            this.btnLimpar.TabIndex = 0;
+            this.btnLimpar.TabIndex = 2;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // pRODUTOBindingSource1
+            // 
+            this.pRODUTOBindingSource1.DataMember = "PRODUTO";
             // 
             // groupBox1
             // 
@@ -289,6 +312,18 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(0, 22);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(684, 247);
+            this.dataGridView.TabIndex = 0;
             // 
             // mOVIMENTOMANUALBindingSource1
             // 
@@ -318,24 +353,9 @@
             // 
             this.mOVIMENTOMANUALBindingSource2.DataSource = this.movimentosManuaisDataSetBindingSource;
             // 
-            // movimentosManuaisDataSet
-            // 
-            this.movimentosManuaisDataSet.DataSetName = "MovimentosManuaisDataSet";
-            this.movimentosManuaisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pRODUTOBindingSource
-            // 
-            this.pRODUTOBindingSource.DataMember = "PRODUTO";
-            this.pRODUTOBindingSource.DataSource = this.movimentosManuaisDataSet;
-            // 
             // pRODUTOTableAdapter
             // 
             this.pRODUTOTableAdapter.ClearBeforeFill = true;
-            // 
-            // pRODUTOCOSIFBindingSource
-            // 
-            this.pRODUTOCOSIFBindingSource.DataMember = "PRODUTO_COSIF";
-            this.pRODUTOCOSIFBindingSource.DataSource = this.movimentosManuaisDataSet;
             // 
             // mOVIMENTO_MANUALTableAdapter
             // 
@@ -400,18 +420,6 @@
             this.tableAdapterManager.PRODUTOTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Movimentacao_Manual.MovimentosManuaisDataSet_NovoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(3, 19);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(681, 253);
-            this.dataGridView.TabIndex = 0;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -462,7 +470,6 @@
             this.Controls.Add(this.lblAno);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblProduto);
-            this.Controls.Add(this.lblMes);
             this.Controls.Add(this.gbMovimento);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -473,20 +480,21 @@
             this.Text = "Consulta Movimentos";
             this.Load += new System.EventHandler(this.Consulta_Movimentos_Load);
             this.gbMovimento.ResumeLayout(false);
+            this.gbMovimento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKPRODUTOCOSIFPRODUTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet_Novo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTO_MANUALBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -537,10 +545,10 @@
         private System.Windows.Forms.BindingSource mOVIMENTO_MANUALBindingSource;
         private MovimentosManuaisDataSet_NovoTableAdapters.MOVIMENTO_MANUALTableAdapter mOVIMENTO_MANUALTableAdapter1;
         private MovimentosManuaisDataSet_NovoTableAdapters.TableAdapterManager tableAdapterManager;
-        public System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
 

@@ -48,7 +48,10 @@
   <ItemGroup>
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\LoginComandos.cs" />
-    <Compile Include="Model\Controle.cs" />
+    <Compile Include="Model\MOVIMENTO_MANUAL.cs" />
+    <Compile Include="Model\PROC_GRID.cs" />
+    <Compile Include="Model\PRODUTO.cs" />
+    <Compile Include="Model\PRODUTO_COSIF.cs" />
     <Compile Include="MovimentosManuaisDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

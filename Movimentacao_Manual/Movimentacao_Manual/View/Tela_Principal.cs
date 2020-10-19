@@ -15,7 +15,6 @@ namespace Movimentacao_Manual
 {
     public partial class Consulta_Movimentos : Form
     {
-        Controle controle = new Controle();
         LoginComandos loginComandos = new LoginComandos();
         public Consulta_Movimentos()
         {
@@ -55,104 +54,107 @@ namespace Movimentacao_Manual
         {
             try
             {
-                if (txtMes.Text != "" && txtAno.Text != "" && txtValor.Text != "" && txtDescricao.Text != "")
+                if (txtMes.Text == "" || int.Parse(txtMes.Text) < 1 || int.Parse(txtMes.Text) > 12)
                 {
-                    string mensagem2 = controle.Incluir(txtMes.Text, txtAno.Text, cbProduto.SelectedValue.ToString(), cbCosif.Text, txtValor.Text, txtDescricao.Text);
-                    ListarGrid();
-                    MessageBox.Show(mensagem2, "Inclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Campo Mês errado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMes.Focus();
+                    return;
+                }
+                if (txtAno.Text == "" || int.Parse(txtAno.Text) < 1990 || int.Parse(txtAno.Text) > 2030)
+                {
+                    MessageBox.Show("Campo Ano errado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtAno.Focus();
+                    return;
+                }
+                if (txtValor.Text == "")
+                {
+                    MessageBox.Show("Campo Valor vazio", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtValor.Focus();
+                    return;
+                }
+                if (txtDescricao.Text == "")
+                {
+                    MessageBox.Show("Campo Descrição vazio", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDescricao.Focus();
+                    return;
                 }
                 else
                 {
-                    if (txtMes.Text == "")
-                    {
-                        MessageBox.Show("Campo Mês vazio", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtMes.Focus();
-                        return;
-                    }
-                    if (txtAno.Text == "")
-                    {
-                        MessageBox.Show("Campo Ano vazio", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtAno.Focus();
-                        return;
-                    }
-                    if (txtValor.Text == "")
-                    {
-                        MessageBox.Show("Campo Valor vazio", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtValor.Focus();
-                        return;
-                    }
-                    if (txtDescricao.Text == "")
-                    {
-                        MessageBox.Show("Campo Descrição vazio", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtDescricao.Focus();
-                        return;
-                    }
+                    MOVIMENTO_MANUAL movManual = new MOVIMENTO_MANUAL( int.Parse(txtMes.Text) , int.Parse(txtAno.Text), 0, cbProduto.SelectedValue.ToString(), cbCosif.Text, txtDescricao.Text, DateTime.Now , "", txtValor.Text );
+                    string mensagem2 = loginComandos.Inclusao(movManual);
+                    MessageBox.Show(mensagem2, "Inclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ListarGrid();
+                    txtMes.Enabled = false;
+                    txtMes.Text = "";
+                    txtAno.Enabled = false;
+                    txtAno.Text = "";
+                    cbProduto.Enabled = false;
+                    cbCosif.Enabled = false;
+                    txtValor.Enabled = false;
+                    txtValor.Text = "";
+                    txtDescricao.Enabled = false;
+                    txtDescricao.Text = "";
+                    btnIncluir.Enabled = false;
+                    btnLimpar.Enabled = false;
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show(controle.mensagem);
+                MessageBox.Show(loginComandos.mensagem);
             }
         }
 
-        private void ListarGrid()
+        public void ListarGrid()
         {
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                Conexao conec = new Conexao();
-                DataTable TabelaDataTable = new DataTable();
-                cmd.Connection = conec.Conectar();
-                cmd = new SqlCommand("PROC_CRUD", conec.con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Acao", SqlDbType.VarChar).Value = "Consultar";
+                dataGridView.DataSource = loginComandos.ListarGrid();
 
-                SqlDataReader ListaReader = cmd.ExecuteReader();
-                TabelaDataTable.Load(ListaReader);
-                dataGridView.DataSource = TabelaDataTable;
-                formataGridView();
-                conec.Desconectar();
+                //formatar o GridView
+                var grade = dataGridView;
+                grade.AutoGenerateColumns = false;
+                grade.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+                grade.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+                //altera a cor das linhas alternadas no grid
+                grade.RowsDefaultCellStyle.BackColor = Color.White;
+                grade.AlternatingRowsDefaultCellStyle.BackColor = Color.Cyan;
+                //altera o nome das colunas
+                grade.Columns[0].HeaderText = "Mês";
+                grade.Columns[1].HeaderText = "Ano";
+                grade.Columns[2].HeaderText = "Código do Produto";
+                grade.Columns[3].HeaderText = "Descrição do Produto";
+                grade.Columns[4].HeaderText = "NR Lançamento";
+                grade.Columns[5].HeaderText = "Descrição";
+                grade.Columns[6].HeaderText = "Valor";
+                grade.Columns[0].Width = 40;
+                grade.Columns[1].Width = 40;
+                grade.Columns[2].Width = 70;
+                grade.Columns[3].Width = 100;
+                grade.Columns[4].Width = 90;
+                grade.Columns[5].Width = 150;
+                grade.Columns[6].Width = 110;
+                //formata as colunas valor, vencimento e pagamento
+                grade.Columns[6].DefaultCellStyle.Format = "c";
+                //seleciona a linha inteira
+                grade.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                //não permite seleção de multiplas linhas    
+                grade.MultiSelect = false;
+                // exibe nulos formatados
+                //grade.DefaultCellStyle.NullValue = " - ";
+                //permite que o texto maior que célula não seja truncado
+                grade.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                //define o alinhamento à direita
+                grade.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grade.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grade.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                grade.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             }
             catch (SqlException e)
             {
 
                 MessageBox.Show("Erro com o Banco de Dados" + e.Message);
             }
-        }
-
-        private void formataGridView()
-        {
-            var grade = dataGridView;
-            grade.AutoGenerateColumns = false;
-            grade.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            grade.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            //altera a cor das linhas alternadas no grid
-            grade.RowsDefaultCellStyle.BackColor = Color.White;
-            grade.AlternatingRowsDefaultCellStyle.BackColor = Color.Cyan;
-            //altera o nome das colunas
-            //grade.Columns[0].HeaderText = "Mês";
-            grade.Columns[0].Width = 40;
-            grade.Columns[1].Width = 40;
-            grade.Columns[2].Width = 70;
-            grade.Columns[3].Width = 100;
-            grade.Columns[4].Width = 90;
-            grade.Columns[5].Width = 150;
-            grade.Columns[6].Width = 110;
-            //formata as colunas valor, vencimento e pagamento
-            grade.Columns[6].DefaultCellStyle.Format = "c";
-            //seleciona a linha inteira
-            grade.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //não permite seleção de multiplas linhas    
-            grade.MultiSelect = false;
-            // exibe nulos formatados
-            //grade.DefaultCellStyle.NullValue = " - ";
-            //permite que o texto maior que célula não seja truncado
-            grade.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            //define o alinhamento à direita
-            grade.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grade.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grade.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            grade.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void Consulta_Movimentos_Load(object sender, EventArgs e)
@@ -170,12 +172,6 @@ namespace Movimentacao_Manual
             this.pRODUTOTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO);
 
         }
-
-
-
-
-
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -197,5 +193,88 @@ namespace Movimentacao_Manual
         {
 
         }
+
+        private void txtMes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita apenas números");
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita apenas números");
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var ContDecimal = txtValor.Text.Length;
+            if (txtValor.Text.Contains(','))
+            {
+                ContDecimal = txtValor.Text.IndexOf(',') + 2;
+                if (txtValor.Text.Length > ContDecimal && e.KeyChar != (Char)8)
+                {
+                    e.KeyChar = (Char)0;
+                }
+            }
+            if ((e.KeyChar < '0' || e.KeyChar > '9') &&
+             (e.KeyChar != ',' && e.KeyChar != '.' &&
+              e.KeyChar != (Char)13 && e.KeyChar != (Char)8))
+            {
+                e.KeyChar = (Char)0;
+            }
+            else
+            {
+                if (e.KeyChar == '.' || e.KeyChar == ',')
+                {
+                    if (!txtValor.Text.Contains(',') && txtValor.Text.Length > 0)
+                    {
+                        e.KeyChar = ',';
+                    }
+                    else
+                    {
+                        e.KeyChar = (Char)0;
+                    }
+                }
+            }
+        }
+
+        private void txtValor_Leave(object sender, EventArgs e)
+        {
+            if (txtValor.Text.Length > 0)
+            {
+                txtValor.Text = Convert.ToDouble(txtValor.Text).ToString("C");
+            }
+        }
+
+        private void txtValor_Enter(object sender, EventArgs e)
+        {
+            String x = "";
+            for (int i = 0; i <= txtValor.Text.Length - 1; i++)
+            {
+                if ((txtValor.Text[i] >= '0' &&
+                    txtValor.Text[i] <= '9') ||
+                    txtValor.Text[i] == ',')
+                {
+                    x += txtValor.Text[i];
+                }
+            }
+            txtValor.Text = x;
+            txtValor.SelectAll();
+        }
+
+      
     }
 }
