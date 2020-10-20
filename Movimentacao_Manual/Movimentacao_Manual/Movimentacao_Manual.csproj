@@ -52,26 +52,6 @@
     <Compile Include="Model\PROC_GRID.cs" />
     <Compile Include="Model\PRODUTO.cs" />
     <Compile Include="Model\PRODUTO_COSIF.cs" />
-    <Compile Include="MovimentosManuaisDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MovimentosManuaisDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MovimentosManuaisDataSet_Novo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MovimentosManuaisDataSet_Novo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="NovoConjunto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NovoConjunto.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="NovoConjuntoDados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NovoConjuntoDados.xsd</DependentUpon>
-    </Compile>
     <Compile Include="View\Tela_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,50 +73,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="MovimentosManuaisDataSet.xsc">
-      <DependentUpon>MovimentosManuaisDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MovimentosManuaisDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MovimentosManuaisDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MovimentosManuaisDataSet.xss">
-      <DependentUpon>MovimentosManuaisDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MovimentosManuaisDataSet_Novo.xsc">
-      <DependentUpon>MovimentosManuaisDataSet_Novo.xsd</DependentUpon>
-    </None>
-    <None Include="MovimentosManuaisDataSet_Novo.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MovimentosManuaisDataSet_Novo.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MovimentosManuaisDataSet_Novo.xss">
-      <DependentUpon>MovimentosManuaisDataSet_Novo.xsd</DependentUpon>
-    </None>
-    <None Include="NovoConjunto.xsc">
-      <DependentUpon>NovoConjunto.xsd</DependentUpon>
-    </None>
-    <None Include="NovoConjunto.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>NovoConjunto.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="NovoConjunto.xss">
-      <DependentUpon>NovoConjunto.xsd</DependentUpon>
-    </None>
-    <None Include="NovoConjuntoDados.xsc">
-      <DependentUpon>NovoConjuntoDados.xsd</DependentUpon>
-    </None>
-    <None Include="NovoConjuntoDados.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>NovoConjuntoDados.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="NovoConjuntoDados.xss">
-      <DependentUpon>NovoConjuntoDados.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

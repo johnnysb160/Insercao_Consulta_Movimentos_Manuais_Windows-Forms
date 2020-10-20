@@ -80,7 +80,7 @@ namespace Movimentacao_Manual
                 }
                 else
                 {
-                    MOVIMENTO_MANUAL movManual = new MOVIMENTO_MANUAL( int.Parse(txtMes.Text) , int.Parse(txtAno.Text), 0, cbProduto.SelectedValue.ToString(), cbCosif.Text, txtDescricao.Text, DateTime.Now , "", txtValor.Text );
+                    MOVIMENTO_MANUAL movManual = new MOVIMENTO_MANUAL(int.Parse(txtMes.Text), int.Parse(txtAno.Text), 0, cbProduto.SelectedValue.ToString(), cbCosif.Text, txtDescricao.Text, DateTime.Now, "", txtValor.Text);
                     string mensagem2 = loginComandos.Inclusao(movManual);
                     MessageBox.Show(mensagem2, "Inclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ListarGrid();
@@ -184,10 +184,37 @@ namespace Movimentacao_Manual
             }
             catch (SqlException e)
             {
-
                 MessageBox.Show("Erro com o Banco de Dados" + e.Message);
             }
         }
+
+        private void cbProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var query = from p in loginComandos.CarregarCodCosif()
+                        where p.COD_PRODUTO == cbProduto.SelectedValue.ToString()
+                        select p;
+            cbCosif.DataSource = query.ToList();
+            cbCosif.ValueMember = "cod_classificacao";
+            cbCosif.DisplayMember = "cod_cosif";
+            cbCosif.Refresh();
+        }
+
+        //Não utilizado************************************************************
+        //private void cbCosif_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    var query = from p in loginComandos.CarregarCodCosif()
+        //              where p.COD_CLASSIFICACAO == cbCosif.SelectedValue.ToString()
+        //              select p.COD_PRODUTO;
+
+        //    var query2 = from p in loginComandos.CarregarProdutos()
+        //                where p.COD_PRODUTO == query.First()
+        //                select p.DES_PRODUTO;
+        //    cbProduto.DataSource = query2.ToList();
+        //    cbProduto.ValueMember = "cod_produto";
+        //    cbProduto.DisplayMember = "des_produto";
+        //    cbProduto.Refresh();
+        //}
+        //Não utilizado************************************************************
 
         private void Consulta_Movimentos_Load(object sender, EventArgs e)
         {
@@ -315,6 +342,7 @@ namespace Movimentacao_Manual
 
                 MessageBox.Show("Error" + a.Message);
             }
-        }     
+        }
+
     }
 }

@@ -40,6 +40,7 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.gbMovimento = new System.Windows.Forms.GroupBox();
+            this.cbProduto = new System.Windows.Forms.ComboBox();
             this.cbCosif = new System.Windows.Forms.ComboBox();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cbProduto = new System.Windows.Forms.ComboBox();
             this.gbMovimento.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -192,6 +192,17 @@
             this.gbMovimento.TabStop = false;
             this.gbMovimento.Text = "Movimento";
             // 
+            // cbProduto
+            // 
+            this.cbProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProduto.Enabled = false;
+            this.cbProduto.FormattingEnabled = true;
+            this.cbProduto.Location = new System.Drawing.Point(91, 60);
+            this.cbProduto.Name = "cbProduto";
+            this.cbProduto.Size = new System.Drawing.Size(106, 25);
+            this.cbProduto.TabIndex = 3;
+            this.cbProduto.SelectedIndexChanged += new System.EventHandler(this.cbProduto_SelectedIndexChanged);
+            // 
             // cbCosif
             // 
             this.cbCosif.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -263,10 +274,11 @@
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 22);
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(3, 19);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(684, 247);
+            this.dataGridView.Size = new System.Drawing.Size(681, 253);
             this.dataGridView.TabIndex = 0;
             // 
             // lblProdutos2
@@ -338,16 +350,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // cbProduto
-            // 
-            this.cbProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProduto.Enabled = false;
-            this.cbProduto.FormattingEnabled = true;
-            this.cbProduto.Location = new System.Drawing.Point(91, 60);
-            this.cbProduto.Name = "cbProduto";
-            this.cbProduto.Size = new System.Drawing.Size(106, 25);
-            this.cbProduto.TabIndex = 3;
             // 
             // Consulta_Movimentos
             // 

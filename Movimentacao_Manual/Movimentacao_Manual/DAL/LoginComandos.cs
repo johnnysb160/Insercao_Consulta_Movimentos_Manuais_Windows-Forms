@@ -44,14 +44,11 @@ namespace Movimentacao_Manual.DAL
             return mensagem;
         }
 
-
         public List<PROC_GRID> ListarGrid()
         {
             List<PROC_GRID> ListaGrid = new List<PROC_GRID>();
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                Conexao conec = new Conexao();
                 DataTable TabelaDataTable = new DataTable();
                 cmd.Connection = conec.Conectar();
                 cmd = new SqlCommand("PROC_CRUD", conec.con);
@@ -83,14 +80,11 @@ namespace Movimentacao_Manual.DAL
             return ListaGrid;
         }
 
-
         public List<PRODUTO> CarregarProdutos()
         {
             List<PRODUTO> ListaProdutos = new List<PRODUTO>();
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                Conexao conec = new Conexao();
                 DataTable TabelaDataTable = new DataTable();
                 cmd.Connection = conec.Conectar();
                 cmd = new SqlCommand("PROC_CRUD", conec.con);
@@ -116,14 +110,11 @@ namespace Movimentacao_Manual.DAL
             return ListaProdutos;
         }
 
-
         public List<PRODUTO_COSIF> CarregarCodCosif()
         {
             List<PRODUTO_COSIF> ListaCodCosif = new List<PRODUTO_COSIF>();
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                Conexao conec = new Conexao();
                 DataTable TabelaDataTable = new DataTable();
                 cmd.Connection = conec.Conectar();
                 cmd = new SqlCommand("PROC_CRUD", conec.con);
@@ -137,7 +128,8 @@ namespace Movimentacao_Manual.DAL
                 {
                     string cod_classificacao = obj[0].ToString();
                     string cod_cosif = obj[1].ToString();
-                    ListaCodCosif.Add(new PRODUTO_COSIF(cod_classificacao, cod_cosif));
+                    string cod_produto = obj[2].ToString();
+                    ListaCodCosif.Add(new PRODUTO_COSIF(cod_classificacao, cod_cosif, cod_produto));
                 }
                 conec.Desconectar(); ;
             }
