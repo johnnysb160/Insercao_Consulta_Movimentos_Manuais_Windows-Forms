@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Movimentos));
             this.lblMes = new System.Windows.Forms.Label();
             this.lblProduto = new System.Windows.Forms.Label();
@@ -42,53 +41,24 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.gbMovimento = new System.Windows.Forms.GroupBox();
             this.cbCosif = new System.Windows.Forms.ComboBox();
-            this.pRODUTOCOSIFBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentosManuaisDataSet = new Movimentacao_Manual.MovimentosManuaisDataSet();
-            this.cbProduto = new System.Windows.Forms.ComboBox();
-            this.pRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.pRODUTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.movimentosManuaisDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mOVIMENTOMANUALBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fKPRODUTOCOSIFPRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblProdutos2 = new System.Windows.Forms.Label();
             this.lblCosif2 = new System.Windows.Forms.Label();
-            this.mOVIMENTOMANUALBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUTOTableAdapter = new Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters.PRODUTOTableAdapter();
-            this.mOVIMENTO_MANUALTableAdapter = new Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters.MOVIMENTO_MANUALTableAdapter();
-            this.mOVIMENTOMANUALBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUTOCOSIFBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUTO_COSIFTableAdapter = new Movimentacao_Manual.MovimentosManuaisDataSetTableAdapters.PRODUTO_COSIFTableAdapter();
             this.cODPRODUTODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cODCOSIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cODCLASSIFICACAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTASTATUSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movimentosManuaisDataSet_Novo = new Movimentacao_Manual.MovimentosManuaisDataSet_Novo();
-            this.mOVIMENTO_MANUALBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mOVIMENTO_MANUALTableAdapter1 = new Movimentacao_Manual.MovimentosManuaisDataSet_NovoTableAdapters.MOVIMENTO_MANUALTableAdapter();
-            this.tableAdapterManager = new Movimentacao_Manual.MovimentosManuaisDataSet_NovoTableAdapters.TableAdapterManager();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cbProduto = new System.Windows.Forms.ComboBox();
             this.gbMovimento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKPRODUTOCOSIFPRODUTOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet_Novo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTO_MANUALBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -99,7 +69,7 @@
             this.lblMes.AutoSize = true;
             this.lblMes.BackColor = System.Drawing.Color.Transparent;
             this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes.Location = new System.Drawing.Point(8, 30);
+            this.lblMes.Location = new System.Drawing.Point(8, 27);
             this.lblMes.Name = "lblMes";
             this.lblMes.Size = new System.Drawing.Size(42, 17);
             this.lblMes.TabIndex = 0;
@@ -109,7 +79,7 @@
             // 
             this.lblProduto.AutoSize = true;
             this.lblProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduto.Location = new System.Drawing.Point(20, 65);
+            this.lblProduto.Location = new System.Drawing.Point(6, 63);
             this.lblProduto.Name = "lblProduto";
             this.lblProduto.Size = new System.Drawing.Size(70, 17);
             this.lblProduto.TabIndex = 1;
@@ -119,7 +89,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(20, 100);
+            this.lblValor.Location = new System.Drawing.Point(8, 101);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(51, 17);
             this.lblValor.TabIndex = 2;
@@ -129,7 +99,7 @@
             // 
             this.lblCosif.AutoSize = true;
             this.lblCosif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCosif.Location = new System.Drawing.Point(219, 65);
+            this.lblCosif.Location = new System.Drawing.Point(210, 63);
             this.lblCosif.Name = "lblCosif";
             this.lblCosif.Size = new System.Drawing.Size(49, 17);
             this.lblCosif.TabIndex = 4;
@@ -140,7 +110,7 @@
             this.lblAno.AutoSize = true;
             this.lblAno.BackColor = System.Drawing.Color.Transparent;
             this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAno.Location = new System.Drawing.Point(222, 29);
+            this.lblAno.Location = new System.Drawing.Point(210, 27);
             this.lblAno.Name = "lblAno";
             this.lblAno.Size = new System.Drawing.Size(41, 17);
             this.lblAno.TabIndex = 3;
@@ -149,8 +119,9 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
+            this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(20, 133);
+            this.lblDescricao.Location = new System.Drawing.Point(6, 160);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(85, 17);
             this.lblDescricao.TabIndex = 5;
@@ -159,30 +130,30 @@
             // txtMes
             // 
             this.txtMes.Enabled = false;
-            this.txtMes.Location = new System.Drawing.Point(103, 26);
+            this.txtMes.Location = new System.Drawing.Point(91, 21);
             this.txtMes.MaxLength = 2;
             this.txtMes.Name = "txtMes";
-            this.txtMes.Size = new System.Drawing.Size(106, 20);
-            this.txtMes.TabIndex = 0;
+            this.txtMes.Size = new System.Drawing.Size(106, 23);
+            this.txtMes.TabIndex = 1;
             this.txtMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMes_KeyPress);
             // 
             // txtAno
             // 
             this.txtAno.Enabled = false;
-            this.txtAno.Location = new System.Drawing.Point(269, 29);
+            this.txtAno.Location = new System.Drawing.Point(257, 24);
             this.txtAno.MaxLength = 4;
             this.txtAno.Name = "txtAno";
-            this.txtAno.Size = new System.Drawing.Size(106, 20);
-            this.txtAno.TabIndex = 1;
+            this.txtAno.Size = new System.Drawing.Size(106, 23);
+            this.txtAno.TabIndex = 2;
             this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
             // 
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(103, 100);
+            this.txtValor.Location = new System.Drawing.Point(91, 98);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(106, 20);
-            this.txtValor.TabIndex = 2;
+            this.txtValor.Size = new System.Drawing.Size(106, 23);
+            this.txtValor.TabIndex = 5;
             this.txtValor.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
@@ -190,20 +161,29 @@
             // txtDescricao
             // 
             this.txtDescricao.Enabled = false;
-            this.txtDescricao.Location = new System.Drawing.Point(103, 133);
+            this.txtDescricao.Location = new System.Drawing.Point(91, 128);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(272, 87);
-            this.txtDescricao.TabIndex = 3;
+            this.txtDescricao.TabIndex = 6;
             // 
             // gbMovimento
             // 
-            this.gbMovimento.Controls.Add(this.cbCosif);
+            this.gbMovimento.Controls.Add(this.txtDescricao);
             this.gbMovimento.Controls.Add(this.cbProduto);
+            this.gbMovimento.Controls.Add(this.lblDescricao);
+            this.gbMovimento.Controls.Add(this.lblValor);
+            this.gbMovimento.Controls.Add(this.lblAno);
+            this.gbMovimento.Controls.Add(this.lblProduto);
+            this.gbMovimento.Controls.Add(this.txtValor);
+            this.gbMovimento.Controls.Add(this.txtMes);
+            this.gbMovimento.Controls.Add(this.cbCosif);
             this.gbMovimento.Controls.Add(this.btnIncluir);
             this.gbMovimento.Controls.Add(this.btnNovo);
             this.gbMovimento.Controls.Add(this.btnLimpar);
             this.gbMovimento.Controls.Add(this.lblMes);
+            this.gbMovimento.Controls.Add(this.txtAno);
+            this.gbMovimento.Controls.Add(this.lblCosif);
             this.gbMovimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMovimento.Location = new System.Drawing.Point(12, 2);
             this.gbMovimento.Name = "gbMovimento";
@@ -214,45 +194,13 @@
             // 
             // cbCosif
             // 
-            this.cbCosif.DataSource = this.pRODUTOCOSIFBindingSource;
-            this.cbCosif.DisplayMember = "COD_COSIF";
             this.cbCosif.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCosif.Enabled = false;
             this.cbCosif.FormattingEnabled = true;
-            this.cbCosif.Location = new System.Drawing.Point(257, 67);
+            this.cbCosif.Location = new System.Drawing.Point(257, 60);
             this.cbCosif.Name = "cbCosif";
             this.cbCosif.Size = new System.Drawing.Size(106, 25);
-            this.cbCosif.TabIndex = 1;
-            this.cbCosif.ValueMember = "COD_CLASSIFICACAO";
-            // 
-            // pRODUTOCOSIFBindingSource
-            // 
-            this.pRODUTOCOSIFBindingSource.DataMember = "PRODUTO_COSIF";
-            this.pRODUTOCOSIFBindingSource.DataSource = this.movimentosManuaisDataSet;
-            // 
-            // movimentosManuaisDataSet
-            // 
-            this.movimentosManuaisDataSet.DataSetName = "MovimentosManuaisDataSet";
-            this.movimentosManuaisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cbProduto
-            // 
-            this.cbProduto.DataSource = this.pRODUTOBindingSource;
-            this.cbProduto.DisplayMember = "DES_PRODUTO";
-            this.cbProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProduto.Enabled = false;
-            this.cbProduto.FormattingEnabled = true;
-            this.cbProduto.Location = new System.Drawing.Point(91, 66);
-            this.cbProduto.Name = "cbProduto";
-            this.cbProduto.Size = new System.Drawing.Size(106, 25);
-            this.cbProduto.TabIndex = 0;
-            this.cbProduto.TabStop = false;
-            this.cbProduto.ValueMember = "COD_PRODUTO";
-            // 
-            // pRODUTOBindingSource
-            // 
-            this.pRODUTOBindingSource.DataMember = "PRODUTO";
-            this.pRODUTOBindingSource.DataSource = this.movimentosManuaisDataSet;
+            this.cbCosif.TabIndex = 4;
             // 
             // btnIncluir
             // 
@@ -264,7 +212,7 @@
             this.btnIncluir.Location = new System.Drawing.Point(294, 225);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(69, 23);
-            this.btnIncluir.TabIndex = 4;
+            this.btnIncluir.TabIndex = 9;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
@@ -278,7 +226,7 @@
             this.btnNovo.Location = new System.Drawing.Point(190, 225);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(69, 23);
-            this.btnNovo.TabIndex = 3;
+            this.btnNovo.TabIndex = 8;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -293,14 +241,10 @@
             this.btnLimpar.Location = new System.Drawing.Point(91, 225);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(69, 23);
-            this.btnLimpar.TabIndex = 2;
+            this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // pRODUTOBindingSource1
-            // 
-            this.pRODUTOBindingSource1.DataMember = "PRODUTO";
             // 
             // groupBox1
             // 
@@ -325,14 +269,6 @@
             this.dataGridView.Size = new System.Drawing.Size(684, 247);
             this.dataGridView.TabIndex = 0;
             // 
-            // mOVIMENTOMANUALBindingSource1
-            // 
-            this.mOVIMENTOMANUALBindingSource1.DataSource = this.movimentosManuaisDataSetBindingSource;
-            // 
-            // fKPRODUTOCOSIFPRODUTOBindingSource
-            // 
-            this.fKPRODUTOCOSIFPRODUTOBindingSource.DataMember = "FK_PRODUTO_COSIF_PRODUTO";
-            // 
             // lblProdutos2
             // 
             this.lblProdutos2.AutoSize = true;
@@ -348,32 +284,6 @@
             this.lblCosif2.Name = "lblCosif2";
             this.lblCosif2.Size = new System.Drawing.Size(0, 13);
             this.lblCosif2.TabIndex = 19;
-            // 
-            // mOVIMENTOMANUALBindingSource2
-            // 
-            this.mOVIMENTOMANUALBindingSource2.DataSource = this.movimentosManuaisDataSetBindingSource;
-            // 
-            // pRODUTOTableAdapter
-            // 
-            this.pRODUTOTableAdapter.ClearBeforeFill = true;
-            // 
-            // mOVIMENTO_MANUALTableAdapter
-            // 
-            this.mOVIMENTO_MANUALTableAdapter.ClearBeforeFill = true;
-            // 
-            // mOVIMENTOMANUALBindingSource
-            // 
-            this.mOVIMENTOMANUALBindingSource.DataMember = "MOVIMENTO_MANUAL";
-            this.mOVIMENTOMANUALBindingSource.DataSource = this.movimentosManuaisDataSet;
-            // 
-            // pRODUTOCOSIFBindingSource1
-            // 
-            this.pRODUTOCOSIFBindingSource1.DataMember = "PRODUTO_COSIF";
-            this.pRODUTOCOSIFBindingSource1.DataSource = this.movimentosManuaisDataSet;
-            // 
-            // pRODUTO_COSIFTableAdapter
-            // 
-            this.pRODUTO_COSIFTableAdapter.ClearBeforeFill = true;
             // 
             // cODPRODUTODataGridViewTextBoxColumn1
             // 
@@ -399,27 +309,6 @@
             this.sTASTATUSDataGridViewTextBoxColumn1.HeaderText = "STA_STATUS";
             this.sTASTATUSDataGridViewTextBoxColumn1.Name = "sTASTATUSDataGridViewTextBoxColumn1";
             // 
-            // movimentosManuaisDataSet_Novo
-            // 
-            this.movimentosManuaisDataSet_Novo.DataSetName = "MovimentosManuaisDataSet_Novo";
-            this.movimentosManuaisDataSet_Novo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mOVIMENTO_MANUALBindingSource
-            // 
-            this.mOVIMENTO_MANUALBindingSource.DataMember = "MOVIMENTO_MANUAL";
-            this.mOVIMENTO_MANUALBindingSource.DataSource = this.movimentosManuaisDataSet_Novo;
-            // 
-            // mOVIMENTO_MANUALTableAdapter1
-            // 
-            this.mOVIMENTO_MANUALTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.PRODUTOTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Movimentacao_Manual.MovimentosManuaisDataSet_NovoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -439,7 +328,6 @@
             this.groupBox2.Size = new System.Drawing.Size(286, 262);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pictureBox2
             // 
@@ -451,6 +339,16 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // cbProduto
+            // 
+            this.cbProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProduto.Enabled = false;
+            this.cbProduto.FormattingEnabled = true;
+            this.cbProduto.Location = new System.Drawing.Point(91, 60);
+            this.cbProduto.Name = "cbProduto";
+            this.cbProduto.Size = new System.Drawing.Size(106, 25);
+            this.cbProduto.TabIndex = 3;
+            // 
             // Consulta_Movimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,15 +359,6 @@
             this.Controls.Add(this.lblCosif2);
             this.Controls.Add(this.lblProdutos2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtDescricao);
-            this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtAno);
-            this.Controls.Add(this.txtMes);
-            this.Controls.Add(this.lblDescricao);
-            this.Controls.Add(this.lblCosif);
-            this.Controls.Add(this.lblAno);
-            this.Controls.Add(this.lblValor);
-            this.Controls.Add(this.lblProduto);
             this.Controls.Add(this.gbMovimento);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -481,20 +370,8 @@
             this.Load += new System.EventHandler(this.Consulta_Movimentos_Load);
             this.gbMovimento.ResumeLayout(false);
             this.gbMovimento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKPRODUTOCOSIFPRODUTOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTOMANUALBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOCOSIFBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentosManuaisDataSet_Novo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIMENTO_MANUALBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -520,35 +397,18 @@
         public System.Windows.Forms.TextBox txtAno;
         public System.Windows.Forms.TextBox txtValor;
         public System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.BindingSource movimentosManuaisDataSetBindingSource;
-        private System.Windows.Forms.BindingSource mOVIMENTOMANUALBindingSource1;
-        private System.Windows.Forms.BindingSource fKPRODUTOCOSIFPRODUTOBindingSource;
         private System.Windows.Forms.Label lblProdutos2;
         private System.Windows.Forms.Label lblCosif2;
-        private System.Windows.Forms.BindingSource pRODUTOBindingSource1;
-        public System.Windows.Forms.ComboBox cbProduto;
         public System.Windows.Forms.ComboBox cbCosif;
-        private System.Windows.Forms.BindingSource mOVIMENTOMANUALBindingSource2;
-        private MovimentosManuaisDataSet movimentosManuaisDataSet;
-        private System.Windows.Forms.BindingSource pRODUTOBindingSource;
-        private MovimentosManuaisDataSetTableAdapters.PRODUTOTableAdapter pRODUTOTableAdapter;
-        private System.Windows.Forms.BindingSource pRODUTOCOSIFBindingSource;
-        private MovimentosManuaisDataSetTableAdapters.MOVIMENTO_MANUALTableAdapter mOVIMENTO_MANUALTableAdapter;
-        private System.Windows.Forms.BindingSource mOVIMENTOMANUALBindingSource;
-        private System.Windows.Forms.BindingSource pRODUTOCOSIFBindingSource1;
-        private MovimentosManuaisDataSetTableAdapters.PRODUTO_COSIFTableAdapter pRODUTO_COSIFTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cODPRODUTODataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cODCOSIFDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cODCLASSIFICACAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTASTATUSDataGridViewTextBoxColumn1;
-        private MovimentosManuaisDataSet_Novo movimentosManuaisDataSet_Novo;
-        private System.Windows.Forms.BindingSource mOVIMENTO_MANUALBindingSource;
-        private MovimentosManuaisDataSet_NovoTableAdapters.MOVIMENTO_MANUALTableAdapter mOVIMENTO_MANUALTableAdapter1;
-        private MovimentosManuaisDataSet_NovoTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dataGridView;
+        public System.Windows.Forms.ComboBox cbProduto;
     }
 }
 

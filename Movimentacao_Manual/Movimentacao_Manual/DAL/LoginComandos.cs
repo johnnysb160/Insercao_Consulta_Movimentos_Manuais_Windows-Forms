@@ -63,7 +63,6 @@ namespace Movimentacao_Manual.DAL
 
                 foreach (DataRow obj in TabelaDataTable.Rows)
                 {
-
                     int mes = int.Parse(obj[0].ToString());
                     int ano = int.Parse(obj[1].ToString());
                     string cod_prod = obj[2].ToString();
@@ -74,8 +73,6 @@ namespace Movimentacao_Manual.DAL
                     ListaGrid.Add(new PROC_GRID(mes, ano, cod_prod, des_prod, num_lanca, des_des, valor));
   
                 }
-
-                //formataGridView();
                 conec.Desconectar();
             }
             catch (SqlException e)
@@ -84,27 +81,31 @@ namespace Movimentacao_Manual.DAL
                 this.mensagem = "Erro com o Banco de Dados" + e.Message;
             }
             return ListaGrid;
-
         }
 
 
-        //******************************************************************************************
-        //Não Utilizado
-        public void CarregarProdutos()
+        public List<PRODUTO> CarregarProdutos()
         {
+            List<PRODUTO> ListaProdutos = new List<PRODUTO>();
             try
             {
-                cmd.Connection = conec.Conectar();
-                Consulta_Movimentos consulta = new Consulta_Movimentos();
-                SqlDataAdapter ListaAdapter = new SqlDataAdapter("SELECT * FROM PRODUTO", conec.con);
+                SqlCommand cmd = new SqlCommand();
+                Conexao conec = new Conexao();
                 DataTable TabelaDataTable = new DataTable();
+                cmd.Connection = conec.Conectar();
+                cmd = new SqlCommand("PROC_CRUD", conec.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Acao", SqlDbType.VarChar).Value = "CarregarProdutos";
 
-                ListaAdapter.Fill(TabelaDataTable);
-                consulta.cbProduto.DataSource = TabelaDataTable;
-                consulta.cbProduto.ValueMember = "COD_PRODUTO";
-                consulta.cbProduto.DisplayMember = "DES_PRODUTO";
-                consulta.cbProduto.SelectedItem = "";
-                consulta.cbProduto.Refresh();
+                SqlDataReader ListaReader = cmd.ExecuteReader();
+                TabelaDataTable.Load(ListaReader);
+
+                foreach (DataRow obj in TabelaDataTable.Rows)
+                {
+                    string cod_prod = obj[0].ToString();
+                    string des_prod = obj[1].ToString();
+                    ListaProdutos.Add(new PRODUTO(cod_prod,des_prod));
+                }
                 conec.Desconectar(); ;
             }
             catch (SqlException e)
@@ -112,8 +113,40 @@ namespace Movimentacao_Manual.DAL
 
                 this.mensagem = "Erro com o Banco de Dados" + e.Message;
             }
+            return ListaProdutos;
         }
-        //******************************************************************************************
+
+
+        public List<PRODUTO_COSIF> CarregarCodCosif()
+        {
+            List<PRODUTO_COSIF> ListaCodCosif = new List<PRODUTO_COSIF>();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                Conexao conec = new Conexao();
+                DataTable TabelaDataTable = new DataTable();
+                cmd.Connection = conec.Conectar();
+                cmd = new SqlCommand("PROC_CRUD", conec.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Acao", SqlDbType.VarChar).Value = "CarregarCodCosif";
+
+                SqlDataReader ListaReader = cmd.ExecuteReader();
+                TabelaDataTable.Load(ListaReader);
+
+                foreach (DataRow obj in TabelaDataTable.Rows)
+                {
+                    string cod_classificacao = obj[0].ToString();
+                    string cod_cosif = obj[1].ToString();
+                    ListaCodCosif.Add(new PRODUTO_COSIF(cod_classificacao, cod_cosif));
+                }
+                conec.Desconectar(); ;
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = "Erro com o Banco de Dados" + e.Message;
+            }
+            return ListaCodCosif;
+        }
     }
 }
 

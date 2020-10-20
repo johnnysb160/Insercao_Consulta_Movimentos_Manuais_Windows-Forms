@@ -8,19 +8,17 @@ namespace Movimentacao_Manual.Model
 {
     class PRODUTO
     {
-        string COD_PRODUTO { get; set; }
-        string DES_PRODUTO { get; set; }
-        string STA_STATUS { get; set; }
+        public string COD_PRODUTO { get; set; }
+        public string DES_PRODUTO { get; set; }
 
         public PRODUTO()
         {
         }
 
-        public PRODUTO(string cOD_PRODUTO, string dES_PRODUTO, string sTA_STATUS)
+        public PRODUTO(string cOD_PRODUTO, string dES_PRODUTO)
         {
             COD_PRODUTO = cOD_PRODUTO;
             DES_PRODUTO = dES_PRODUTO;
-            STA_STATUS = sTA_STATUS;
         }
     }
 }

@@ -157,124 +157,164 @@ namespace Movimentacao_Manual
             }
         }
 
+        public void CarregaProdutos()
+        {
+            try
+            {
+                cbProduto.DataSource = loginComandos.CarregarProdutos();
+                cbProduto.ValueMember = "cod_produto";
+                cbProduto.DisplayMember = "des_produto";
+                cbProduto.Refresh();
+            }
+            catch (SqlException e)
+            {
+
+                MessageBox.Show("Erro com o Banco de Dados" + e.Message);
+            }
+        }
+
+        public void CarregaCosif()
+        {
+            try
+            {
+                cbCosif.DataSource = loginComandos.CarregarCodCosif();
+                cbCosif.ValueMember = "cod_classificacao";
+                cbCosif.DisplayMember = "cod_cosif";
+                cbCosif.Refresh();
+            }
+            catch (SqlException e)
+            {
+
+                MessageBox.Show("Erro com o Banco de Dados" + e.Message);
+            }
+        }
+
         private void Consulta_Movimentos_Load(object sender, EventArgs e)
         {
             ListarGrid();
-            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet_Novo.MOVIMENTO_MANUAL'. Você pode movê-la ou removê-la conforme necessário.
-            this.mOVIMENTO_MANUALTableAdapter1.Fill(this.movimentosManuaisDataSet_Novo.MOVIMENTO_MANUAL);
-            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.MOVIMENTO_MANUAL'. Você pode movê-la ou removê-la conforme necessário.
-            this.mOVIMENTO_MANUALTableAdapter.Fill(this.movimentosManuaisDataSet.MOVIMENTO_MANUAL);
-            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.MOVIMENTO_MANUAL'. Você pode movê-la ou removê-la conforme necessário.
-            this.mOVIMENTO_MANUALTableAdapter.Fill(this.movimentosManuaisDataSet.MOVIMENTO_MANUAL);
-            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.PRODUTO_COSIF'. Você pode movê-la ou removê-la conforme necessário.
-            this.pRODUTO_COSIFTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO_COSIF);
-            // TODO: esta linha de código carrega dados na tabela 'movimentosManuaisDataSet.PRODUTO'. Você pode movê-la ou removê-la conforme necessário.
-            this.pRODUTOTableAdapter.Fill(this.movimentosManuaisDataSet.PRODUTO);
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillGridToolStripButton_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
+            CarregaProdutos();
+            CarregaCosif();
         }
 
         private void txtMes_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            try
+            {
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
 
-            {
-                e.Handled = true;
-                MessageBox.Show("Este campo aceita apenas números");
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Este campo aceita apenas números");
+                }
+                else
+                {
+                    e.Handled = false;
+                }
             }
-            else
+            catch (Exception a)
             {
-                e.Handled = false;
+
+                MessageBox.Show("Error" + a.Message);
             }
         }
 
         private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
-
+            try
             {
-                e.Handled = true;
-                MessageBox.Show("Este campo aceita apenas números");
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Este campo aceita apenas números");
+                }
+            }
+            catch (Exception a)
+            {
+
+                MessageBox.Show("Error" + a.Message);
             }
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var ContDecimal = txtValor.Text.Length;
-            if (txtValor.Text.Contains(','))
+            try
             {
-                ContDecimal = txtValor.Text.IndexOf(',') + 2;
-                if (txtValor.Text.Length > ContDecimal && e.KeyChar != (Char)8)
+                var ContDecimal = txtValor.Text.Length;
+                if (txtValor.Text.Contains(','))
                 {
-                    e.KeyChar = (Char)0;
-                }
-            }
-            if ((e.KeyChar < '0' || e.KeyChar > '9') &&
-             (e.KeyChar != ',' && e.KeyChar != '.' &&
-              e.KeyChar != (Char)13 && e.KeyChar != (Char)8))
-            {
-                e.KeyChar = (Char)0;
-            }
-            else
-            {
-                if (e.KeyChar == '.' || e.KeyChar == ',')
-                {
-                    if (!txtValor.Text.Contains(',') && txtValor.Text.Length > 0)
-                    {
-                        e.KeyChar = ',';
-                    }
-                    else
+                    ContDecimal = txtValor.Text.IndexOf(',') + 2;
+                    if (txtValor.Text.Length > ContDecimal && e.KeyChar != (Char)8)
                     {
                         e.KeyChar = (Char)0;
                     }
                 }
+                if ((e.KeyChar < '0' || e.KeyChar > '9') &&
+                 (e.KeyChar != ',' && e.KeyChar != '.' &&
+                  e.KeyChar != (Char)13 && e.KeyChar != (Char)8))
+                {
+                    e.KeyChar = (Char)0;
+                }
+                else
+                {
+                    if (e.KeyChar == '.' || e.KeyChar == ',')
+                    {
+                        if (!txtValor.Text.Contains(',') && txtValor.Text.Length > 0)
+                        {
+                            e.KeyChar = ',';
+                        }
+                        else
+                        {
+                            e.KeyChar = (Char)0;
+                        }
+                    }
+                }
+            }
+            catch (Exception a)
+            {
+
+                MessageBox.Show("Error" + a.Message);
             }
         }
 
         private void txtValor_Leave(object sender, EventArgs e)
         {
-            if (txtValor.Text.Length > 0)
+            try
             {
-                txtValor.Text = Convert.ToDouble(txtValor.Text).ToString("C");
+                if (txtValor.Text.Length > 0)
+                {
+                    txtValor.Text = Convert.ToDouble(txtValor.Text).ToString("C");
+                }
+            }
+            catch (Exception a)
+            {
+
+                MessageBox.Show("Error" + a.Message);
             }
         }
 
         private void txtValor_Enter(object sender, EventArgs e)
         {
-            String x = "";
-            for (int i = 0; i <= txtValor.Text.Length - 1; i++)
+            try
             {
-                if ((txtValor.Text[i] >= '0' &&
-                    txtValor.Text[i] <= '9') ||
-                    txtValor.Text[i] == ',')
+                String x = "";
+                for (int i = 0; i <= txtValor.Text.Length - 1; i++)
                 {
-                    x += txtValor.Text[i];
+                    if ((txtValor.Text[i] >= '0' &&
+                        txtValor.Text[i] <= '9') ||
+                        txtValor.Text[i] == ',')
+                    {
+                        x += txtValor.Text[i];
+                    }
                 }
+                txtValor.Text = x;
+                txtValor.SelectAll();
             }
-            txtValor.Text = x;
-            txtValor.SelectAll();
-        }
+            catch (Exception a)
+            {
 
-      
+                MessageBox.Show("Error" + a.Message);
+            }
+        }     
     }
 }
